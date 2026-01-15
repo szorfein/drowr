@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "astro": "^5.16.9",
-    "graphql-request": "^7.4.0"
+    "graphql-request": "^7.4.0",
+    "@drowr/licid": "*"
   }
 }

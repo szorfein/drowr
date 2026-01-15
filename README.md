@@ -1,14 +1,11 @@
-# Turborepo starter
+# Drowr
 
-This Turborepo starter is maintained by the Turborepo core team.
+Powered by:
 
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+<p align="left">
+<a href="https://turborepo.dev/"><img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/turborepo.svg" alt="turborepo" height="40" /></a>  <a href="https://astro.build"><img src="https://raw.githubusercontent.com/gilbarbara/logos/main/logos/astro.svg" alt="astrojs" height="40" /></a> <a href="https://hashnode.com/"><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1675531271955/ALEtNA1cM.png?auto=compress" alt="hashnode" height="40" /></a>  <a href="https://vercel.com/"><img src="https://github.com/devicons/devicon/raw/refs/heads/master/icons/vercel/vercel-original.svg" alt="vercel" height="40" /></a><br />
+<img src="../../.github/assets/licid-cut.png" height="80" weight="80" />
+</p>
 
 ## What's inside?
 
