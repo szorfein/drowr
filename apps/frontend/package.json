@@ -1,5 +1,5 @@
 {
-  "name": "apps-frontend",
+  "name": "@drowr/frontend",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.16.9"
+    "astro": "^5.16.9",
+    "graphql-request": "^7.4.0",
+    "@drowr/licid": "*"
   }
 }

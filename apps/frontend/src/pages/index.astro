@@ -1,7 +1,10 @@
 ---
+import { getAllPosts } from '../lib/client';
+import { MyComponent } from '@drowr/licid'
 
+const data = await getAllPosts();
+const allPosts = data.publication.posts.edges;
 ---
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -11,6 +14,15 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+            <MyComponent prefix="Hello" />
+            <h1>Astro</h1>
+            {
+            allPosts.map((post) => (
+                <div>
+                    <h2>{post.node.title}</h2>
+                    <a href={`/post/${post.node.slug}`}>Read more</a>
+                </div>
+            ))
+        }
 	</body>
 </html>
