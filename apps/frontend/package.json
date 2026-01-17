@@ -9,8 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@drowr/licid": "*",
+    "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.9",
     "graphql-request": "^7.4.0",
-    "@drowr/licid": "*"
+    "tailwindcss": "^4.1.18"
   }
 }

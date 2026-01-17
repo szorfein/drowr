@@ -1,0 +1,23 @@
+---
+import "../styles.css"
+
+interface Props {
+prefix?: string,
+title?: string;
+}
+---
+<div class="card-outlined bg-surface text-primary border border-outline rounded-xl hover:border-outlineVariant">
+    <div class="hover:bg-onSurface/10">
+    <div class="px-8">
+        <div class="font-(font-family:display-large) text-primary">
+            <slot name="header" />
+        </div>
+        <div class="text-3xl">
+            <slot name="footer" />
+        </div>
+        <div class="text-onSurface">
+            {Astro.props.prefix} My special component
+        </div>
+    </div>
+    </div>
+</div>
