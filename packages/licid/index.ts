@@ -2,6 +2,8 @@
 // Then, use this file to export everything you want your user to access.
 
 import MyComponent from "./src/MyComponent.astro";
+import CardOutlined from "./src/Card/Outlined.astro";
+import TypoDisplayLarge from "./src/Typo/DisplayLarge.astro";
 
 // Don't use 'export default' here
-export { MyComponent };
+export { MyComponent, CardOutlined, TypoDisplayLarge };

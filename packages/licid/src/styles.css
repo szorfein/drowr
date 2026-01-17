@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@import "./global-fonts.css";
+
+/* You need to add each component you use here...
+@source "../../../packages/products/feat-product-detail";
+@source "../../../packages/shared/ui";
+@source "./Card/Outlined.astro";
+*/
+
+@theme {
+  --font-serif: "typeface-plain", serif;
+  --font-body-medium: "body-medium", serif;
+  --font-display-large: "display-large", serif;
+  --color-primary: #83d2e3;
+  --color-surface: #0e1416;
+  --color-onSurface: #dee3e5;
+  --color-outline: #899295;
+  --color-outlineVariant: #3f484a;
+}
+
+:root {
+  --color-hoverState: rgba(
+    222,
+    227,
+    229,
+    0.08
+  ); /* convert onSurface into rgb */
+}

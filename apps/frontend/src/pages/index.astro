@@ -1,6 +1,7 @@
 ---
+import '@drowr/licid/styles.css';
 import { getAllPosts } from '../lib/client';
-import { MyComponent } from '@drowr/licid'
+import { MyComponent, CardOutlined, TypoDisplayLarge } from '@drowr/licid'
 
 const data = await getAllPosts();
 const allPosts = data.publication.posts.edges;
@@ -9,19 +10,29 @@ const allPosts = data.publication.posts.edges;
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
+	<body class="container">
+            <h1 class="text-3xl font-bold underline font-serif">
+                Hello world! from base
+            </h1>
+            <h1 class="underline font-body-medium">
+                Hello world! from base body-medium
+            </h1>
             <MyComponent prefix="Hello" />
-            <h1>Astro</h1>
+            <TypoDisplayLarge title="Astro" />
             {
             allPosts.map((post) => (
-                <div>
+            <CardOutlined>
+            <Fragment slot="header">
                     <h2>{post.node.title}</h2>
+            </Fragment>
+            <Fragment slot="footer">
                     <a href={`/post/${post.node.slug}`}>Read more</a>
-                </div>
+            </Fragment>
+            </CardOutlined>
             ))
         }
 	</body>
