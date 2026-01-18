@@ -14,5 +14,11 @@
     "astro": "^5.16.9",
     "graphql-request": "^7.4.0",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@drowr/eslint-config": "*",
+    "prettier": "^3.8.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   }
 }

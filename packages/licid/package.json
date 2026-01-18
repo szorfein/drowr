@@ -24,8 +24,12 @@
     "dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch"
   },
   "devDependencies": {
+    "@drowr/eslint-config": "*",
     "@tailwindcss/cli": "^4.1.5",
-    "astro": "^5.16.9"
+    "astro": "^5.16.9",
+    "prettier": "^3.8.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   },
   "peerDependencies": {
     "astro": "^4.0.0 || ^5.0.0"
