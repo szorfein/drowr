@@ -1,28 +1,40 @@
 ---
-import { getAllPosts } from '../lib/client';
-import { MyComponent } from '@drowr/licid'
+import "@drowr/licid/styles.css";
+import { CardOutlined, MyComponent, TypoDisplayLarge } from "@drowr/licid";
+import { getAllPosts } from "../lib/client";
 
 const data = await getAllPosts();
 const allPosts = data.publication.posts.edges;
 ---
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-            <MyComponent prefix="Hello" />
-            <h1>Astro</h1>
-            {
-            allPosts.map((post) => (
-                <div>
-                    <h2>{post.node.title}</h2>
-                    <a href={`/post/${post.node.slug}`}>Read more</a>
-                </div>
-            ))
-        }
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="container">
+    <h1 class="font-serif text-3xl font-bold underline">
+      Hello world! from base
+    </h1>
+    <h1 class="font-body-medium underline">
+      Hello world! from base body-medium
+    </h1>
+    <MyComponent prefix="Hello" />
+    <TypoDisplayLarge title="Astro" />
+    {
+      allPosts.map((post) => (
+        <CardOutlined>
+          <Fragment slot="header">
+            <h2>{post.node.title}</h2>
+          </Fragment>
+          <Fragment slot="footer">
+            <a href={`/post/${post.node.slug}`}>Read more</a>
+          </Fragment>
+        </CardOutlined>
+      ))
+    }
+  </body>
 </html>

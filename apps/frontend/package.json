@@ -9,8 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@drowr/licid": "*",
+    "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.9",
     "graphql-request": "^7.4.0",
-    "@drowr/licid": "*"
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@drowr/eslint-config": "*",
+    "prettier": "^3.8.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   }
 }
