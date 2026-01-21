@@ -1,8 +1,10 @@
 # Changelog
 
-## 0.6.0
+## 0.8.0
 
-- Add fonts Iosevka Etoile, we'll see if it's a good choice
+- Configure dark, light theme.
+- Add Logo, Header navigation bar
+- Add fonts Iosevka Etoile, preload fonts with Astro, we'll see if it's a good choice
 - Add/rewrite configs for biome, eslint, prettier. Base configurations from Turborepo are bad...
 - Add Tailwindcss, a lot of pain to install it in monorepo
 - Create a packages/licid

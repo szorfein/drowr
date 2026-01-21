@@ -1,10 +1,13 @@
 ---
-import "../styles.css"
+import "../styles.css";
 
 interface Props {
-    title?: string;
+  title?: string;
 }
 ---
-<h1 class="font-display-large font-[500] text-[57pt] leading-[64pt] tracking-[0] font-stretch-normal">
-    {Astro.props.title}
+
+<h1
+  class="font-plain text-[57pt] leading-[64pt] font-medium tracking-[0] font-stretch-normal"
+>
+  {Astro.props.title}
 </h1>

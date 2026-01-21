@@ -1,0 +1,29 @@
+---
+import "./styles.css";
+import { Image } from "astro:assets";
+import logoImage from "./assets/logoImage.png";
+---
+
+<a href="/" class="navbar-brand inline-block w-full">
+  <Image
+    src={logoImage}
+    class="inline-block"
+    width="70"
+    height="60"
+    alt="drowr"
+    style="height: 60px;"
+    loading="eager"
+    decoding="async"
+    format="webp"
+  />
+  <span class="capitalize">Drowr</span>
+</a>
+<style>
+  @reference "./styles.css";
+  .navbar-brand {
+    @apply text-onSurface dark:text-dark-onSurface font-plain text-xl font-medium;
+    image {
+      @apply max-h-full max-w-full;
+    }
+  }
+</style>
