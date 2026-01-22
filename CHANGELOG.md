@@ -1,8 +1,9 @@
 # Changelog
 
-## 0.8.0
+## 0.9.0
 
-- Configure dark, light theme.
+- Start layout, global styles.css from Licid.
+- Configure dark, light theme with ThemeSwitcher in javascript.
 - Add Logo, Header navigation bar
 - Add fonts Iosevka Etoile, preload fonts with Astro, we'll see if it's a good choice
 - Add/rewrite configs for biome, eslint, prettier. Base configurations from Turborepo are bad...

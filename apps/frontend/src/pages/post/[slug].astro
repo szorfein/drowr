@@ -1,4 +1,5 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 import { getAllPosts, getPost } from "../../lib/client";
 
 export async function getStaticPaths() {
@@ -14,16 +15,15 @@ const { slug } = Astro.params;
 const post = await getPost(slug);
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<Layout>
+  <!--
     <title>{post.title}</title>
-  </head>
-  <body>
-    <h1>{post.title}</h1>
-    <Fragment set:html={post.content.html} />
-    <a href="/">back home</a>
-  </body>
-</html>
+    -->
+  <div class="container">
+    <h1 class="headline-medium">{post.title}</h1>
+    <div class="body-medium">
+      <Fragment set:html={post.content.html} />
+      <a href="/">back home</a>
+    </div>
+  </div>
+</Layout>

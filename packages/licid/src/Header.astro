@@ -1,9 +1,10 @@
 ---
 import "./styles.css";
 import Logo from "./Logo.astro";
-import IconDarkMode from "./assets/icons/dark-mode.svg";
 import IconMenu from "./assets/icons/menu.svg";
 import IconSearch from "./assets/icons/search.svg";
+import ButtonIcon from "./components/button/IconStandard.astro";
+import ThemeSwitcher from "./components/header/ThemeSwitcher.astro";
 ---
 
 <header class="header sticky top-0 z-30">
@@ -14,9 +15,23 @@ import IconSearch from "./assets/icons/search.svg";
     </div>
     {/* right buttons */}
     <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-      <IconSearch width={24} height={24} fill="currentColor" class="mr-4" />
-      <IconDarkMode width={24} height={24} fill="currentColor" class="mr-4" />
-      <IconMenu width={24} height={24} fill="currentColor" />
+      <ButtonIcon classes="mr-2">
+        <IconSearch
+          width={24}
+          height={24}
+          class="fill-onSurfaceVariant dark:fill-dark-onSurfaceVariant"
+          fill="none"
+        />
+      </ButtonIcon>
+      <ThemeSwitcher />
+      <ButtonIcon>
+        <IconMenu
+          width={24}
+          height={24}
+          fill="currentColor"
+          class="fill-onSurfaceVariant dark:fill-dark-onSurfaceVariant"
+        />
+      </ButtonIcon>
     </div>
   </nav>
 </header>

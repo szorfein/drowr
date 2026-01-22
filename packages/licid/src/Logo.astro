@@ -1,7 +1,14 @@
 ---
 import "./styles.css";
 import { Image } from "astro:assets";
-import logoImage from "./assets/logoImage.png";
+import logoSrc from "./assets/logoImage.png";
+
+type Props = {
+  logoImage?: string;
+  logoText?: string;
+};
+
+const { logoImage = logoSrc, logoText = "Drowr" } = Astro.props;
 ---
 
 <a href="/" class="navbar-brand inline-block w-full">
@@ -16,12 +23,12 @@ import logoImage from "./assets/logoImage.png";
     decoding="async"
     format="webp"
   />
-  <span class="capitalize">Drowr</span>
+  <span class="headline-small ml-1 align-middle">{logoText}</span>
 </a>
 <style>
   @reference "./styles.css";
   .navbar-brand {
-    @apply text-onSurface dark:text-dark-onSurface font-plain text-xl font-medium;
+    @apply text-onSurface dark:text-dark-onSurface;
     image {
       @apply max-h-full max-w-full;
     }

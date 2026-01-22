@@ -8,9 +8,9 @@ interface Props {
 ---
 
 <div
-  class="card-outlined bg-surface text-primary border-outline hover:border-outlineVariant rounded-xl border"
+  class="card-outlined bg-surface text-primary border-outline hover:border-outlineVariant dark:bg-dark-surface dark:text-dark-primary dark:border-dark-outline rounded-xl border"
 >
-  <div class="hover:bg-onSurface/10">
+  <div class="hover:bg-onSurface/10 dark:hover:bg-dark-onSurface/10">
     <div class="px-8">
       <div class="font-(font-family:display-large) text-primary">
         <slot name="header" />
@@ -18,7 +18,7 @@ interface Props {
       <div class="text-3xl">
         <slot name="footer" />
       </div>
-      <div class="text-onSurface">
+      <div class="text-onSurface dark:text-dark-onSurface">
         {Astro.props.prefix} My special component
       </div>
     </div>

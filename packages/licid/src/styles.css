@@ -1,30 +1,26 @@
 @import "tailwindcss";
-
-/* You need to add each component you use here...
-@import "./global-fonts.css";
-@source "../../../packages/products/feat-product-detail";
-@source "../../../packages/shared/ui";
-@source "./Card/Outlined.astro";
-*/
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* light colors */
   --color-primary: #006877;
   --color-surface: #f5fafc;
   --color-onSurface: #171d1e;
+  --color-onSurfaceVariant: #3f484a;
   --color-outline: #6f797b;
   --color-outlineVariant: #bfc8ca;
   /* dark colors */
   --color-dark-primary: #83d2e3;
   --color-dark-surface: #0e1416;
   --color-dark-onSurface: #dee3e5;
+  --color-onSurfaceVariant: #bfc8ca;
   --color-dark-outline: #899295;
   --color-dark-outlineVariant: #3f484a;
 }
 
 @theme inline {
-  --font-plain: var(--font-plain);
   --font-brand: var(--font-brand);
+  --font-plain: var(--font-plain);
 }
 
 :root {
@@ -36,7 +32,14 @@
   ); /* convert onSurface into rgb */
 }
 
+@layer base {
+  body {
+    @apply bg-surface text-onSurface dark:bg-dark-surface dark:text-dark-onSurface;
+  }
+}
+
 @layer components {
+  @import "./styles/fonts.css";
   .container {
     @apply mx-auto px-4 xl:max-w-330;
   }
