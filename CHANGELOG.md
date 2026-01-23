@@ -1,7 +1,8 @@
 # Changelog
 
-## 0.9.0
+## 0.10.1
 
+- Better card for post.
 - Start layout, global styles.css from Licid.
 - Configure dark, light theme with ThemeSwitcher in javascript.
 - Add Logo, Header navigation bar
@@ -11,6 +12,10 @@
 - Create a packages/licid
 - Add a CMS on Astro: hashnode.com
 - Add Astro using: npm create astro@latest apps/frontend
+
+### Fixes
+
+- Wrong color on OnVariantSurface for light theme.
 
 ### About Biome
 

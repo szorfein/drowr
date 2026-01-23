@@ -9,22 +9,77 @@ const myHashnodeURL = "drowr.hashnode.dev";
 export const getAllPosts = async () => {
   const client = getClient();
 
-  const allPosts = await client.request(gql`
-      query allPosts {
-        publication(host: "${myHashnodeURL}") {
-          id
-          title
-          posts(first: 20) {
-              edges {
-                  node {
-                      title
-                      slug
-                  }
-              }
-          }
+  const allPosts = await client.request(
+    gql`
+        query allPosts {
+            publication(host: "${myHashnodeURL}") {
+                id
+                title
+                posts(first: 20) {
+                    totalDocuments
+                    edges {
+                        node {
+                            slug
+                            url
+                            brief
+                            title
+                            subtitle
+                            hasLatexInPost
+                            publishedAt
+                            updatedAt
+                            readTimeInMinutes
+                            reactionCount
+                            responseCount
+                            publication {
+                                id
+                            }
+                            seo {
+                                title
+                                description
+                            }
+                            coverImage {
+                                url
+                            }
+                            author {
+                                name
+                                username
+                                profilePicture
+                            }
+                            title
+                            content {
+                                markdown
+                                html
+                            }
+                            ogMetaData {
+                                image
+                            }
+                            tags {
+                                id
+                                name
+                                slug
+                            }
+                            features {
+                                tableOfContents {
+                                    isEnabled
+                                    items {
+                                        id
+                                        level
+                                        parentId
+                                        slug
+                                        title
+                                    }
+                                }
+                            }
+                            preferences {
+                                disableComments
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
-  `);
+        `,
+  );
   return allPosts;
 };
 
@@ -33,15 +88,15 @@ export const getPost = async (slug: string) => {
 
   const data = await client.request(
     gql`
-      query postDetails($slug: String!) {
-        publication(host: "${myHashnodeURL}") {
-          id
-          post(slug: $slug) {
-              title
-              content{
-                  html
-              }
-          }
+        query postDetails($slug: String!) {
+            publication(host: "${myHashnodeURL}") {
+                id
+                post(slug: $slug) {
+                    title
+                    content{
+                        html
+                    }
+                }
         }
       }
       `,

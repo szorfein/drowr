@@ -6,6 +6,7 @@ import Header from "./src/Header.astro";
 import MyComponent from "./src/MyComponent.astro";
 import CardOutlined from "./src/Card/Outlined.astro";
 import TypoDisplayLarge from "./src/Typo/DisplayLarge.astro";
+import ChipsSuggestion from "./src/components/chips/Suggestion.astro";
 
 // Don't use 'export default' here
 export {
@@ -14,4 +15,5 @@ export {
   MyComponent,
   CardOutlined,
   TypoDisplayLarge,
+  ChipsSuggestion,
 };
