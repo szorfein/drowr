@@ -15,8 +15,7 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `frontend`: another [Astro](https://astro.build/) app
+- `frontend`: a [Astro.js](https://astro.build/) app
 - `@drowr/licid`: Material components for Astro using tailwindcss and [IosevkaEtoile](https://github.com/be5invis/Iosevka) as font shared by both `web` and `docs` applications.
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
