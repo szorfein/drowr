@@ -1,0 +1,20 @@
+---
+import "../../styles.css";
+type Props = {
+  type?: string;
+  text?: string;
+  classes?: string;
+};
+const { type = "button", text, classes } = Astro.props;
+---
+
+<button type={type} class:list={["button", { [`${classes}`]: classes }]}>
+  <slot />
+  {text === "string" || text ? text : ""}
+</button>
+<style>
+  @reference "../../styles.css";
+  .button {
+    @apply hover:bg-primary/10 dark:hover:bg-dark-primary/10 size-10 self-center rounded-full p-2 align-middle;
+  }
+</style>

@@ -1,23 +1,26 @@
 ---
-import '../styles.css';
+import "../styles.css";
 
 interface Props {
-    prefix?: string;
-    title?: string;
+  prefix?: string;
+  title?: string;
 }
 ---
-<div class="card-outlined bg-surface text-primary border border-outline rounded-xl hover:border-outlineVariant">
-    <div class="hover:bg-onSurface/10">
+
+<div
+  class="card-outlined bg-surface text-primary border-outline hover:border-outlineVariant dark:bg-dark-surface dark:text-dark-primary dark:border-dark-outline rounded-xl border"
+>
+  <div class="hover:bg-onSurface/10 dark:hover:bg-dark-onSurface/10">
     <div class="px-8">
-        <div class="font-(font-family:display-large) text-primary">
-            <slot name="header" />
-        </div>
-        <div class="text-3xl">
-            <slot name="footer" />
-        </div>
-        <div class="text-onSurface">
-            {Astro.props.prefix} My special component
-        </div>
+      <div class="font-(font-family:display-large) text-primary">
+        <slot name="header" />
+      </div>
+      <div class="text-3xl">
+        <slot name="footer" />
+      </div>
+      <div class="text-onSurface dark:text-dark-onSurface">
+        {Astro.props.prefix} My special component
+      </div>
     </div>
-    </div>
+  </div>
 </div>
