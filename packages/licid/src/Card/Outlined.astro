@@ -1,26 +1,95 @@
 ---
 import "../styles.css";
+import DateRange from "../assets/icons/date_range.svg";
+import ArrowForward from "../assets/icons/arrow_forward.svg";
+import ChipsSuggestion from "../components/chips/Suggestion.astro";
+
+type Tag = {
+  id: string;
+  name: string;
+  slug: string;
+};
 
 interface Props {
-  prefix?: string;
   title?: string;
+  slug?: string;
+  publishedAt?: Date;
+  brief?: string;
+  tags?: Tag[] | undefined;
 }
+
+const { title, slug, publishedAt, brief, tags } = Astro.props;
+
+let options = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
+
+const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
+  new Date(publishedAt),
+);
 ---
 
 <div
-  class="card-outlined bg-surface text-primary border-outline hover:border-outlineVariant dark:bg-dark-surface dark:text-dark-primary dark:border-dark-outline rounded-xl border"
+  class="card-outlined bg-surface text-primary border-outline hover:border-outlineVariant dark:bg-dark-surface dark:text-dark-primary dark:border-dark-outline dark:hover:border-dark-outlineVariant rounded-xl border"
 >
   <div class="hover:bg-onSurface/10 dark:hover:bg-dark-onSurface/10">
-    <div class="px-8">
+    <div class="card-outined p-4">
+      <div
+        class="label-small text-onSurfaceVariant dark:text-dark-onSurfaceVariant mb-2 inline-block w-full"
+      >
+        <DateRange
+          width={24}
+          height={24}
+          fill="currentColor"
+          class="fill-onSurfaceVariant dark:fill-dark-onSurfaceVariant inline-block"
+        />
+        <span class="align-bottom">{formattedDate}</span>
+      </div>
+      <div class="headline-medium text-onSurface dark:text-dark-onSurface mb-3">
+        <h2>{title}</h2>
+      </div>
       <div class="font-(font-family:display-large) text-primary">
         <slot name="header" />
       </div>
       <div class="text-3xl">
         <slot name="footer" />
       </div>
-      <div class="text-onSurface dark:text-dark-onSurface">
-        {Astro.props.prefix} My special component
+      <div class="body-small text-onSurface dark:text-dark-onSurface mb-4">
+        {brief}
+      </div>
+      <div>
+        {
+          tags.map((tag) => (
+            <span class="text-onSurface dark:text-dark-onSurface">
+              <ChipsSuggestion name={tag.name} slug={tag.slug} />
+            </span>
+          ))
+        }
+      </div>
+      <div class="mt-4">
+        <a href={`/post/${slug}`}>Read more </a>
+        <ArrowForward
+          width={24}
+          height={24}
+          fill="currentColor"
+          class="fill-primary dark:fill-dark-primary link inline-block"
+        />
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  @reference "../styles.css";
+  .card-outlined:hover {
+    h2 {
+      @apply text-primary dark:text-dark-primary;
+      transition: color 0.2s ease;
+    }
+    .link {
+      transform: translateX(4px);
+    }
+  }
+</style>
