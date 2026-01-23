@@ -1,0 +1,70 @@
+/* All fonts defined by order Big to small */
+/* Material 3 use 2 fonts (can be differents):
+md.ref.typeface.brand, the brand is used on some title
+md.ref.typeface.plain, else plain is used.
+
+/* font-brand is weight 400
+/* font-plain is weight 500
+
+/* All display */
+.display-large {
+  @apply font-brand text-[57pt] leading-[64pt] font-medium tracking-[0] not-italic font-stretch-normal;
+}
+.display-medium {
+  @apply font-plain text-[45pt] leading-[52pt] font-normal tracking-[0] not-italic font-stretch-normal;
+}
+.display-small {
+  @apply font-plain text-[36pt] leading-[44pt] font-normal tracking-[0] not-italic font-stretch-normal;
+}
+
+/*
+/*
+/* All headline */
+.headline-large {
+  @apply font-brand text-[32pt] leading-[40pt] font-normal tracking-[0] not-italic font-stretch-normal;
+}
+.headline-medium {
+  @apply font-brand text-[28pt] leading-12 font-normal tracking-[0] not-italic font-stretch-normal;
+}
+.headline-small {
+  @apply font-brand text-[24pt] leading-[32pt] font-normal tracking-[0] not-italic font-stretch-normal;
+}
+
+/*
+/*
+/* All title */
+.title-large {
+  @apply font-brand text-[22pt] leading-[28pt] font-normal tracking-[0] not-italic font-stretch-normal;
+}
+.title-medium {
+  @apply font-plain text-[16pt] leading-8 font-medium tracking-[0] not-italic font-stretch-normal;
+}
+.title-small {
+  @apply font-plain text-[14pt] leading-[20pt] font-medium tracking-[0] not-italic font-stretch-normal;
+}
+
+/*
+/*
+/* All body */
+.body-large {
+  @apply font-brand text-[16pt] leading-8 font-normal tracking-[0] not-italic font-stretch-normal;
+}
+.body-medium {
+  @apply font-brand text-[14pt] leading-[20pt] font-normal tracking-[0] not-italic font-stretch-normal;
+}
+.body-small {
+  @apply font-brand text-[12pt] leading-[16pt] font-normal tracking-[0.1pt] not-italic font-stretch-normal;
+}
+
+/*
+/*
+/* All label */
+.label-large {
+  @apply font-plain text-[14pt] leading-[20pt] font-medium tracking-[0] not-italic font-stretch-normal;
+}
+.label-medium {
+  @apply font-plain text-[12pt] leading-[16pt] font-medium tracking-[0.1pt] not-italic font-stretch-normal;
+}
+.label-small {
+  @apply font-plain text-[11pt] leading-[16pt] font-medium tracking-[0.1pt] not-italic font-stretch-normal;
+}

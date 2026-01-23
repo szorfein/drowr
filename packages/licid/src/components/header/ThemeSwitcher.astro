@@ -1,0 +1,68 @@
+---
+import "../../styles.css";
+
+import IconDarkMode from "../../assets/icons/dark-mode.svg";
+import ButtonIcon from "../button/IconStandard.astro";
+---
+
+<div id="theme-switcher">
+  <ButtonIcon classes="mr-2">
+    <IconDarkMode
+      width={24}
+      height={24}
+      fill="currentColor"
+      class="fill-onSurfaceVariant dark:fill-dark-onSurfaceVariant"
+    />
+  </ButtonIcon>
+</div>
+
+<script>
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const button = document.getElementById("theme-switcher");
+  button.addEventListener("click", function () {
+    toggleTheme();
+  });
+
+  function toggleTheme() {
+    const defaultTheme = matchMedia.matches ? "dark" : "light";
+    const currentTheme = localStorage.getItem("theme") || defaultTheme;
+
+    if (currentTheme === "light") {
+      console.log("is light, toggle");
+      localStorage.setItem("theme", "dark");
+      window.matchMedia("(prefers-color-scheme: dark)");
+    } else {
+      console.log("is dark, toggle");
+      localStorage.setItem("theme", "light");
+      window.matchMedia("(prefers-color-scheme: light)");
+    }
+
+    document.documentElement.classList.toggle(
+      "dark",
+      localStorage.getItem("theme") === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches),
+    );
+  }
+
+  const setDarkMode = () => {
+    const defaultTheme = matchMedia.matches ? "dark" : "light";
+    const currentTheme = localStorage.getItem("theme") || defaultTheme;
+
+    document.documentElement.classList.toggle(
+      "dark",
+      currentTheme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches),
+    );
+
+    console.log(`setDarkMode to ${currentTheme}`);
+  };
+
+  // Runs on initial navigation
+  setDarkMode();
+
+  // Runs on view transitions navigation
+  document.addEventListener("astro:after-swap", setDarkMode);
+</script>

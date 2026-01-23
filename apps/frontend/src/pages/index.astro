@@ -1,21 +1,14 @@
 ---
-import "@drowr/licid/styles.css";
-import { CardOutlined, MyComponent, TypoDisplayLarge } from "@drowr/licid";
 import { getAllPosts } from "../lib/client";
+import { CardOutlined, MyComponent, TypoDisplayLarge } from "@drowr/licid";
+import Layout from "../layouts/Layout.astro";
 
 const data = await getAllPosts();
 const allPosts = data.publication.posts.edges;
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body class="container">
+<Layout>
+  <div class="container">
     <h1 class="font-serif text-3xl font-bold underline">
       Hello world! from base
     </h1>
@@ -36,5 +29,5 @@ const allPosts = data.publication.posts.edges;
         </CardOutlined>
       ))
     }
-  </body>
-</html>
+  </div>
+</Layout>

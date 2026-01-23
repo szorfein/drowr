@@ -1,9 +1,17 @@
 // Do not write code directly here, instead use the `src` folder!
 // Then, use this file to export everything you want your user to access.
 
+import PreloadFontsHead from "./src/PreloadFontsHead.astro";
+import Header from "./src/Header.astro";
 import MyComponent from "./src/MyComponent.astro";
 import CardOutlined from "./src/Card/Outlined.astro";
 import TypoDisplayLarge from "./src/Typo/DisplayLarge.astro";
 
 // Don't use 'export default' here
-export { MyComponent, CardOutlined, TypoDisplayLarge };
+export {
+  PreloadFontsHead,
+  Header,
+  MyComponent,
+  CardOutlined,
+  TypoDisplayLarge,
+};
