@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astropub/md": "^1.0.0",
     "@drowr/licid": "*",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.9",

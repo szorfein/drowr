@@ -1,6 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getAllPosts, getPost } from "../../lib/client";
+import { HeroBlogPost, MarkdownCode } from "@drowr/licid";
+import { Markdown } from "@astropub/md";
+//import { Code } from 'astro:components';
 
 export async function getStaticPaths() {
   const data = await getAllPosts();
@@ -19,11 +22,26 @@ const post = await getPost(slug);
   <!--
     <title>{post.title}</title>
     -->
-  <div class="container">
-    <h1 class="headline-medium">{post.title}</h1>
-    <div class="body-medium">
-      <Fragment set:html={post.content.html} />
-      <a href="/">back home</a>
+  <article>
+    <div class="container">
+      <HeroBlogPost
+        tags={post.tags}
+        title={post.title}
+        publishedAt={post.publishedAt}
+        updatedAt={post.updatedAt}
+      />
+      <div class="post-content">
+        <!--
+        <Fragment set:html={post.content.html} />
+
+                  components={{
+                  img: RemoteImage
+                  }}
+        -->
+        <MarkdownCode>
+          <Markdown of={post?.content?.markdown} />
+        </MarkdownCode>
+      </div>
     </div>
-  </div>
+  </article>
 </Layout>

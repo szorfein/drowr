@@ -7,6 +7,8 @@ import MyComponent from "./src/MyComponent.astro";
 import CardOutlined from "./src/Card/Outlined.astro";
 import TypoDisplayLarge from "./src/Typo/DisplayLarge.astro";
 import ChipsSuggestion from "./src/components/chips/Suggestion.astro";
+import HeroBlogPost from "./src/blocks/hero/BlogPost.astro";
+import MarkdownCode from "./src/blocks/markdown/code.astro";
 
 // Don't use 'export default' here
 export {
@@ -16,4 +18,6 @@ export {
   CardOutlined,
   TypoDisplayLarge,
   ChipsSuggestion,
+  HeroBlogPost,
+  MarkdownCode,
 };

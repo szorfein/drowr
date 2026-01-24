@@ -93,7 +93,18 @@ export const getPost = async (slug: string) => {
                 id
                 post(slug: $slug) {
                     title
+                    subtitle
+                    hasLatexInPost
+                    publishedAt
+                    updatedAt
+                    readTimeInMinutes
+                    tags {
+                        id
+                        name
+                        slug
+                    }
                     content{
+                        markdown
                         html
                     }
                 }
