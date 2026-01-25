@@ -1,7 +1,11 @@
 # Changelog
 
-## 0.9.0
+## 0.13.1
 
+- New Hero on /
+- Add Seo, og, in /post and /.
+- New ShareIt component.
+- Better card for post.
 - Start layout, global styles.css from Licid.
 - Configure dark, light theme with ThemeSwitcher in javascript.
 - Add Logo, Header navigation bar
@@ -11,6 +15,10 @@
 - Create a packages/licid
 - Add a CMS on Astro: hashnode.com
 - Add Astro using: npm create astro@latest apps/frontend
+
+### Fixes
+
+- Wrong color on OnVariantSurface for light theme.
 
 ### About Biome
 

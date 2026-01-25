@@ -1,6 +1,10 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import LayoutPost from "../../layouts/LayoutPost.astro";
 import { getAllPosts, getPost } from "../../lib/client";
+import { HeroPost, MarkdownCode, ShareIt } from "@drowr/licid";
+import { Markdown } from "@astropub/md";
+import config from "../../config/config.json";
 
 export async function getStaticPaths() {
   const data = await getAllPosts();
@@ -15,15 +19,27 @@ const { slug } = Astro.params;
 const post = await getPost(slug);
 ---
 
-<Layout>
-  <!--
-    <title>{post.title}</title>
-    -->
-  <div class="container">
-    <h1 class="headline-medium">{post.title}</h1>
-    <div class="body-medium">
-      <Fragment set:html={post.content.html} />
-      <a href="/">back home</a>
-    </div>
-  </div>
+<Layout title={`${post.seo.title} | Drowr`} description={post.seo.description}>
+  <LayoutPost>
+    <article>
+      <div class="container">
+        <HeroPost
+          tags={post.tags}
+          title={post.title}
+          publishedAt={post.publishedAt}
+          updatedAt={post.updatedAt}
+        />
+        <div class="post-content">
+          <MarkdownCode>
+            <Markdown of={post?.content?.markdown} />
+          </MarkdownCode>
+        </div>
+        <ShareIt
+          url={`${config.site.base_url}/post/${slug}`}
+          title={post.title}
+          description={post.subtitle}
+        />
+      </div>
+    </article>
+  </LayoutPost>
 </Layout>

@@ -1,7 +1,8 @@
 ---
-import { getAllPosts } from "../lib/client";
-import { CardOutlined, MyComponent, TypoDisplayLarge } from "@drowr/licid";
+import { CardOutlined, HeroHome } from "@drowr/licid";
+import config from "../config/config.json";
 import Layout from "../layouts/Layout.astro";
+import { getAllPosts } from "../lib/client";
 
 const data = await getAllPosts();
 const allPosts = data.publication.posts.edges;
@@ -9,23 +10,22 @@ const allPosts = data.publication.posts.edges;
 
 <Layout>
   <div class="container">
-    <h1 class="font-serif text-3xl font-bold underline">
-      Hello world! from base
-    </h1>
-    <h1 class="font-body-medium underline">
-      Hello world! from base body-medium
-    </h1>
-    <MyComponent prefix="Hello" />
-    <TypoDisplayLarge title="Astro" />
+    <HeroHome author={config.site.author} />
+    <!--
+    {JSON.stringify(allPosts)}
+    <TypoDisplayLarge title="Recent posts" />
+    -->
     {
       allPosts.map((post) => (
-        <CardOutlined>
-          <Fragment slot="header">
-            <h2>{post.node.title}</h2>
-          </Fragment>
-          <Fragment slot="footer">
-            <a href={`/post/${post.node.slug}`}>Read more</a>
-          </Fragment>
+        <CardOutlined
+          brief={post.node.subtitle}
+          title={post.node.title}
+          publishedAt={post.node.publishedAt}
+          tags={post.node.tags}
+          slug={post.node.slug}
+        >
+          <Fragment slot="header" />
+          <Fragment slot="footer" />
         </CardOutlined>
       ))
     }

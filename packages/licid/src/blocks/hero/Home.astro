@@ -1,0 +1,42 @@
+---
+interface Props {
+  author?: string;
+}
+const { author } = Astro.props;
+---
+
+<section
+  class="herohome relative flex items-center justify-center overflow-hidden py-8"
+>
+  <div class="max-[900px] z-10 text-center transition-colors ease-out">
+    <div class="body-large">Hi, i'm</div>
+    <h1 class="text-primary dark:text-dark-primary display-medium">{author}</h1>
+    <p class="title-large py-4">Fullstack JS & Creative coder</p>
+    <p class="body-small max-w-150">
+      Audidact, Linux ricer. This is my site, where i share my last Linux
+      desktops, notes, and write tutorials...
+    </p>
+    <div class="mt-8 mb-12 flex flex-wrap justify-center gap-4">
+      <!-- button filled -->
+      <div
+        class="bg-primary dark:bg-dark-primary text-onPrimary dark:text-dark-onPrimary flex min-h-14 rounded-full"
+      >
+        <div class="hover:bg-onPrimary/10 dark:hover:bg-dark-onPrimary/10 flex">
+          <a class="flex items-center px-6" href="/">
+            <span class="label-medium">View project -&gt;</span>
+          </a>
+        </div>
+      </div>
+      <!-- button outlined -->
+      <div
+        class="bg-outlineVariant dark:bg-dark-outlineVariant text-onSurfaceVariant dark:text-dark-onSurfaceVariant flex min-h-14 rounded-full"
+      >
+        <div class="hover:bg-onPrimary/10 dark:hover:bg-dark-onPrimary/10 flex">
+          <a class="flex items-center px-6" href="/">
+            <span class="label-medium">Look posts</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

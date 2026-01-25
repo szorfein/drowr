@@ -1,0 +1,9 @@
+{
+  "site": {
+    "title": "Drowr",
+    "base_url": "https://drowr.vercel.app",
+    "base_path": "/",
+    "description": "Personal site, all my projects, posts, howtos, desktop screens...",
+    "author": "Szorfein"
+  }
+}

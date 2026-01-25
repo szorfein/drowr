@@ -1,9 +1,19 @@
 @import "tailwindcss";
+
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Load order
+@layer base        <- Global styles
+@layer components  <- Reusable components
+@layer utilities   <- Specific utilities (highest priority)
+*/
 
 @theme {
   /* light colors */
   --color-primary: #006877;
+  --color-onPrimary: #ffffff;
+  --color-inverseSurface: #2b3133;
+  --color-error: #ba1a1a;
   --color-surface: #f5fafc;
   --color-onSurface: #171d1e;
   --color-onSurfaceVariant: #3f484a;
@@ -11,25 +21,17 @@
   --color-outlineVariant: #bfc8ca;
   /* dark colors */
   --color-dark-primary: #83d2e3;
+  --color-dark-onPrimary: #00363e;
+  --color-dark-inverseSurface: #dee3e5;
+  --color-dark-error: #ffb4ab;
   --color-dark-surface: #0e1416;
   --color-dark-onSurface: #dee3e5;
-  --color-onSurfaceVariant: #bfc8ca;
+  --color-dark-onSurfaceVariant: #bfc8ca;
   --color-dark-outline: #899295;
   --color-dark-outlineVariant: #3f484a;
-}
 
-@theme inline {
   --font-brand: var(--font-brand);
   --font-plain: var(--font-plain);
-}
-
-:root {
-  --color-hoverState: rgba(
-    222,
-    227,
-    229,
-    0.08
-  ); /* convert onSurface into rgb */
 }
 
 @layer base {
@@ -42,5 +44,8 @@
   @import "./styles/fonts.css";
   .container {
     @apply mx-auto px-4 xl:max-w-330;
+  }
+  .my-display-large {
+    @apply text-error dark:text-dark-error;
   }
 }
