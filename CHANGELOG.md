@@ -1,7 +1,8 @@
 # Changelog
 
-## 0.12.1
+## 0.13.1
 
+- New Hero on /
 - Add Seo, og, in /post and /.
 - New ShareIt component.
 - Better card for post.
