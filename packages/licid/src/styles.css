@@ -11,6 +11,8 @@
 @theme {
   /* light colors */
   --color-primary: #006877;
+  --color-onPrimary: #ffffff;
+  --color-inverseSurface: #2b3133;
   --color-error: #ba1a1a;
   --color-surface: #f5fafc;
   --color-onSurface: #171d1e;
@@ -19,6 +21,8 @@
   --color-outlineVariant: #bfc8ca;
   /* dark colors */
   --color-dark-primary: #83d2e3;
+  --color-dark-onPrimary: #00363e;
+  --color-dark-inverseSurface: #dee3e5;
   --color-dark-error: #ffb4ab;
   --color-dark-surface: #0e1416;
   --color-dark-onSurface: #dee3e5;
