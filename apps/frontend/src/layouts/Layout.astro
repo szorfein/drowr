@@ -1,10 +1,19 @@
 ---
 import "@drowr/licid/styles.css";
+import { ClientRouter } from "astro:transitions";
+import { Header, PreloadFontsHead } from "@drowr/licid";
+import config from "../config/config.json";
 
-import { PreloadFontsHead, Header } from "@drowr/licid";
+interface Props {
+  title?: string;
+  description?: string;
+  author?: string;
+}
+
+const { title, description, author } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="mode-auto">
   <head>
     <meta charset="utf-8" />
     <!-- Preload experimental fonts feature Astro 5 -->
@@ -12,7 +21,44 @@ import { PreloadFontsHead, Header } from "@drowr/licid";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <!-- title -->
+    <title>{title ? title : config.site.title}</title>
+
+    <!-- meta-description -->
+    <meta
+      name="description"
+      content={description ? description : config.site.description}
+    />
+
+    <ClientRouter fallback="swap" />
+
+    <meta name="author" content={author ? author : config.site.author} />
+
+    <!-- og-title -->
+    <meta property="og:title" content={title ? title : config.site.title} />
+
+    <!-- og-description -->
+    <meta
+      property="og:description"
+      content={description ? description : config.site.description}
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content={`${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`}
+    />
+
+    <!-- twitter-title -->
+    <meta name="twitter:title" content={title ? title : config.site.title} />
+
+    <!-- twitter-description -->
+    <meta
+      name="twitter:description"
+      content={description ? description : config.site.description}
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <Header />

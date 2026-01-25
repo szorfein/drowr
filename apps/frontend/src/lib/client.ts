@@ -107,10 +107,14 @@ export const getPost = async (slug: string) => {
                         markdown
                         html
                     }
+                    seo {
+                        title
+                        description
+                    }
                 }
+            }
         }
-      }
-      `,
+        `,
     { slug: slug },
   );
 

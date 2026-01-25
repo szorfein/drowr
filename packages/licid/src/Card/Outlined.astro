@@ -1,7 +1,6 @@
 ---
-import "../styles.css";
-import DateRange from "../assets/icons/date_range.svg";
 import ArrowForward from "../assets/icons/arrow_forward.svg";
+import DateRange from "../assets/icons/date_range.svg";
 import ChipsSuggestion from "../components/chips/Suggestion.astro";
 
 type Tag = {
@@ -47,9 +46,9 @@ const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
         />
         <span class="align-bottom">{formattedDate}</span>
       </div>
-      <div class="headline-medium text-onSurface dark:text-dark-onSurface mb-3">
-        <h2>{title}</h2>
-      </div>
+      <h2 class="headline-medium text-onSurface dark:text-dark-onSurface mb-3">
+        {title}
+      </h2>
       <div class="font-(font-family:display-large) text-primary">
         <slot name="header" />
       </div>

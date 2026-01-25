@@ -1,7 +1,9 @@
 # Changelog
 
-## 0.10.1
+## 0.12.1
 
+- Add Seo, og, in /post and /.
+- New ShareIt component.
 - Better card for post.
 - Start layout, global styles.css from Licid.
 - Configure dark, light theme with ThemeSwitcher in javascript.
