@@ -4,7 +4,6 @@ import TwitterIcon from "../assets/icons/twitter.svg";
 import LinkedinIcon from "../assets/icons/linkedin.svg";
 import PinterestIcon from "../assets/icons/pinterest.svg";
 const { url, title, description } = Astro.props;
-const a_url = Astro.url;
 ---
 
 <div class="row mt-8">
@@ -43,7 +42,7 @@ const a_url = Astro.url;
       </li>
       <li class="inline-block">
         <a
-          href={`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${description}&source=${a_url.origin}`}
+          href={`https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${description}&source=${Astro.url}`}
           target="_blank"
           aria-label="linkedin share button"
           rel="noreferrer noopener"

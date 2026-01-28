@@ -1,0 +1,21 @@
+---
+interface Props {
+  name?: string;
+  slug?: string;
+  isfocus?: boolean;
+}
+
+const { name, slug, isfocus = false } = Astro.props;
+---
+
+{
+  isfocus ? (
+    <div class="bg-primary/10 dark:bg-dark-primary/10 label-large text-onSurfaceVariant dark:text-dark-onSurfaceVariant hover:bg-primary/20 dark:hover:bg-dark-primary/20 border-outline mt-4 h-8 w-fit rounded-lg border px-4">
+      <a href={slug}>{name}</a>
+    </div>
+  ) : (
+    <div class="bg-surface dark:bg-dark-surface label-large text-onSurfaceVariant dark:text-dark-onSurfaceVariant hover:bg-primary/20 dark:hover:bg-dark-primary/20 border-outline mt-4 h-8 w-fit rounded-lg border px-4">
+      <a href={slug}>{name}</a>
+    </div>
+  )
+}

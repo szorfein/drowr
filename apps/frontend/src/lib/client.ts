@@ -120,3 +120,80 @@ export const getPost = async (slug: string) => {
 
   return data.publication.post;
 };
+
+export const getAllPostsByTag = async (first, tagName) => {
+  const client = getClient();
+
+  const allPosts = await client.request(
+    gql`
+        query TagPostsByPublication {
+            publication(host: "${myHashnodeURL}") {
+                id
+                title
+                posts(first: ${first}, filter: { tagSlugs: ["${tagName}"] }) {
+                    totalDocuments
+                    edges {
+                        node {
+                            slug
+                            url
+                            brief
+                            title
+                            subtitle
+                            hasLatexInPost
+                            publishedAt
+                            updatedAt
+                            readTimeInMinutes
+                            reactionCount
+                            responseCount
+                            publication {
+                                id
+                            }
+                            seo {
+                                title
+                                description
+                            }
+                            coverImage {
+                                url
+                            }
+                            author {
+                                name
+                                username
+                                profilePicture
+                            }
+                            title
+                            content {
+                                markdown
+                                html
+                            }
+                            ogMetaData {
+                                image
+                            }
+                            tags {
+                                id
+                                name
+                                slug
+                            }
+                            features {
+                                tableOfContents {
+                                    isEnabled
+                                    items {
+                                        id
+                                        level
+                                        parentId
+                                        slug
+                                        title
+                                    }
+                                }
+                            }
+                            preferences {
+                                disableComments
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        `,
+  );
+  return allPosts;
+};
