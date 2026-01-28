@@ -1,9 +1,11 @@
 # Changelog
 
-## 0.13.1
+## 0.15.1
 
+- New last desktop on / and Hashnode request QueryPostsByTags
+- Add a navigation bar by tags on /posts
 - New Hero on /
-- Add Seo, og, in /post and /.
+- Add Seo, og, in /posts and /.
 - New ShareIt component.
 - Better card for post.
 - Start layout, global styles.css from Licid.

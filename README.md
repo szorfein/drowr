@@ -1,6 +1,6 @@
 # Drowr
 
-A 'little' site with various stack... heberged for free by Vercel.
+A 'little' site with various stack... heberged for free by Vercel. Blog contents are enhanced by IA with Hashnode. The UI use [material 3](https://https://m3.material.io/) recommendation. Followed by best Astro template's like [foxy](https://github.com/oxygenna-themes/foxi-astro-theme), [astroplate](https://github.com/zeon-studio/astroplate/tree/multilingual) and [darkness](https://github.com/kpab/astro-darkness/tree/working) help to keep a hight score in [PageSpeed Insight](https://pagespeed.web.dev/analysis/https-drowr-vercel-app/2ati6omvbl?form_factor=desktop).
 
 Powered by:
 
