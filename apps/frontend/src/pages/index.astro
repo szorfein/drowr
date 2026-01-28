@@ -1,6 +1,7 @@
 ---
 import { HeroHome } from "@drowr/licid";
 import RecentsPosts from "@/blocks/home/RecentsPosts.astro";
+import LastTheme from "@/blocks/home/LastTheme.astro";
 import Layout from "@/layouts/Layout.astro";
 import config from "@/config/config.json";
 ---
@@ -8,6 +9,7 @@ import config from "@/config/config.json";
 <Layout>
   <div class="container">
     <HeroHome author={config.site.author} />
+    <LastTheme />
     <RecentsPosts />
   </div>
 </Layout>

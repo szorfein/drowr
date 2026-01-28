@@ -12,7 +12,7 @@ const allPosts = data.publication.posts.edges;
   <div class="container">
     <HeroBlogPost />
     <TagNavigation />
-    <div class="grid md:grid-cols-2">
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       {
         allPosts.map((post) => (
           <CardOutlined
