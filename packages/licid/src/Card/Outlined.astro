@@ -33,7 +33,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
 <div
   class="card-outlined bg-surface text-primary border-outline hover:border-outlineVariant dark:bg-dark-surface dark:text-dark-primary dark:border-dark-outline dark:hover:border-dark-outlineVariant rounded-xl border"
 >
-  <div class="hover:bg-onSurface/10 dark:hover:bg-dark-onSurface/10">
+  <div class="hover:bg-onSurface/10 dark:hover:bg-dark-onSurface/10 h-full">
     <div class="card-outined p-4">
       <div
         class="label-small text-onSurfaceVariant dark:text-dark-onSurfaceVariant mb-2 inline-block w-full"
@@ -58,7 +58,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
       <div class="body-small text-onSurface dark:text-dark-onSurface mb-4">
         {brief}
       </div>
-      <div>
+      <div class="flex flex-wrap gap-1">
         {
           tags.map((tag) => (
             <span class="text-onSurface dark:text-dark-onSurface">

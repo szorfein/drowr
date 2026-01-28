@@ -18,7 +18,7 @@ const allPosts = data.publication.posts.edges;
     >
   </h2>
   <p class="body-small mb-12 text-center">Latest articles from the blog</p>
-  <div class="grid grid-cols-1 md:grid-cols-2">
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
     {
       allPosts.map((post) => (
         <CardOutlined
