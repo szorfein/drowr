@@ -1,0 +1,37 @@
+---
+import { getAllPosts } from "@/lib/client";
+import { CardOutlined } from "@drowr/licid";
+
+const data = await getAllPosts();
+const allPosts = data.publication.posts.edges;
+---
+
+<section id="recent-posts">
+  <h2 class="headline-large mx-auto mb-4 max-w-4xl text-center text-pretty">
+    Recents <strong class="text-primary dark:text-dark-primary"
+      ><a
+        href="/posts"
+        label="go to posts"
+        class="hover:border-b-primary dark:hover:border-b-dark-primary hover:border-b"
+        >posts</a
+      ></strong
+    >
+  </h2>
+  <p class="body-small mb-12 text-center">Latest articles from the blog</p>
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    {
+      allPosts.map((post) => (
+        <CardOutlined
+          brief={post.node.subtitle}
+          title={post.node.title}
+          publishedAt={post.node.publishedAt}
+          tags={post.node.tags}
+          slug={post.node.slug}
+        >
+          <Fragment slot="header" />
+          <Fragment slot="footer" />
+        </CardOutlined>
+      ))
+    }
+  </div>
+</section>

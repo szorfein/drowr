@@ -1,11 +1,12 @@
 import js from "@eslint/js";
 import globals from "globals";
-import { defineConfig } from "eslint/config";
+//import { defineConfig } from "eslint/config";
 import eslintPluginAstro from "eslint-plugin-astro";
 import tseslint from "typescript-eslint";
 import turboPlugin from "eslint-plugin-turbo";
 
-export default defineConfig([
+/** @type {import("eslint").Linter.Config[]} */
+export const astroConfig = [
   { files: ["**/*.js"], languageOptions: { globals: globals.browser } },
   { files: ["**/*.js"], plugins: { js }, extends: ["js/recommended"] },
   ...tseslint.configs.recommended,
@@ -27,4 +28,4 @@ export default defineConfig([
   {
     ignores: ["dist/**"],
   },
-]);
+];
