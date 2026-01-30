@@ -1,39 +1,11 @@
 // @ts-check
-import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "astro/config";
+import config from "./src/config/config.json";
 
 // https://astro.build/config
 export default defineConfig({
-  experimental: {
-    fonts: [
-      {
-        provider: "local",
-        name: "Plain",
-        cssVariable: "--font-plain",
-        variants: [
-          {
-            weight: 500,
-            style: "normal",
-            src: ["./src/assets/fonts/IosevkaEtoile-Medium.woff2"],
-            display: "swap",
-          },
-        ],
-      },
-      {
-        provider: "local",
-        name: "Brand",
-        cssVariable: "--font-brand",
-        variants: [
-          {
-            weight: 400,
-            style: "normal",
-            src: ["./src/assets/fonts/IosevkaEtoile-Regular.woff2"],
-            display: "swap",
-          },
-        ],
-      },
-    ],
-  },
+  site: config.site.base_url,
   vite: {
     plugins: [tailwindcss()],
   },

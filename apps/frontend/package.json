@@ -13,6 +13,7 @@
     "@drowr/licid": "*",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.9",
+    "astro-font": "^1.1.0",
     "graphql-request": "^7.4.0",
     "tailwindcss": "^4.1.18"
   },
