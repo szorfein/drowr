@@ -11,10 +11,10 @@ md.ref.typeface.plain, else plain is used.
   @apply font-brand text-[57pt] leading-[64pt] font-medium tracking-[0] not-italic font-stretch-normal;
 }
 .display-medium {
-  @apply font-plain text-[45pt] leading-[52pt] font-normal tracking-[0] not-italic font-stretch-normal;
+  @apply font-brand text-[45pt] leading-[52pt] font-normal tracking-[0] not-italic font-stretch-normal;
 }
 .display-small {
-  @apply font-plain text-[36pt] leading-[44pt] font-normal tracking-[0] not-italic font-stretch-normal;
+  @apply font-brand text-[36pt] leading-[44pt] font-normal tracking-[0] not-italic font-stretch-normal;
 }
 
 /*
@@ -47,13 +47,13 @@ md.ref.typeface.plain, else plain is used.
 /*
 /* All body */
 .body-large {
-  @apply font-brand text-[16pt] leading-8 font-normal tracking-[0] not-italic font-stretch-normal;
+  @apply font-plain text-[16pt] leading-8 font-normal tracking-[0] not-italic font-stretch-normal;
 }
 .body-medium {
-  @apply font-brand text-[14pt] leading-[20pt] font-normal tracking-[0] not-italic font-stretch-normal;
+  @apply font-plain text-[14pt] leading-[20pt] font-normal tracking-[0] not-italic font-stretch-normal;
 }
 .body-small {
-  @apply font-brand text-[12pt] leading-[16pt] font-normal tracking-[0.1pt] not-italic font-stretch-normal;
+  @apply font-plain text-[12pt] leading-[16pt] font-normal tracking-[0.1pt] not-italic font-stretch-normal;
 }
 
 /*
