@@ -4,14 +4,20 @@ type Props = {
   type?: string;
   text?: string;
   classes?: string;
+  label: string;
 };
-const { type = "button", text, classes } = Astro.props;
+const { type = "button", text, classes, label } = Astro.props;
 ---
 
-<button type={type} class:list={["button", { [`${classes}`]: classes }]}>
+<button
+  type={type}
+  class:list={["button", { [`${classes}`]: classes }]}
+  aria-label={label}
+>
   <slot />
   {text === "string" || text ? text : ""}
 </button>
+
 <style>
   @reference "../../styles.css";
   .button {
