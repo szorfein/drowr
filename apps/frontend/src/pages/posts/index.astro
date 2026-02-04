@@ -6,6 +6,16 @@ import { getAllPosts } from "../../lib/client";
 
 const data = await getAllPosts();
 const allPosts = data.publication.posts.edges;
+
+function filterPost(item) {
+  const hasTheme = item.node.tags.map((tag) => tag.name).includes("themes");
+  if (hasTheme) {
+    return false;
+  }
+  return true;
+}
+
+const allPostsFiltered = allPosts.filter(filterPost);
 ---
 
 <Layout>
@@ -14,7 +24,7 @@ const allPosts = data.publication.posts.edges;
     <TagNavigation />
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       {
-        allPosts.map((post) => (
+        allPostsFiltered.map((post) => (
           <CardOutlined
             brief={post.node.subtitle}
             title={post.node.title}
