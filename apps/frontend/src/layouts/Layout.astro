@@ -14,9 +14,7 @@ interface Props {
 }
 
 const { title, description, author } = Astro.props;
-const fontPrefix = import.meta.env.PROD
-  ? config.site.base_url
-  : join(process.cwd(), "public");
+const fontPrefix = import.meta.env.PROD ? "/" : join(process.cwd(), "public");
 
 console.log(fontPrefix);
 console.log(import.meta.env.PROD);
