@@ -6,6 +6,19 @@ const data = await getAllPosts();
 const allPosts = data.publication.posts.edges;
 
 const tags = [...new Set(allPosts.flatMap((post) => post.node.tags))];
+
+// need to add
+function filterTags(item) {
+  const hasTheme = item.name.includes("themes");
+  const swayfx = item.name.includes("swayfx");
+  if (hasTheme || swayfx) {
+    return false;
+  }
+  return true;
+}
+
+const tagsFiltered = tags.filter(filterTags);
+
 const currentPath = new URL(Astro.request.url).pathname;
 const pathSegments = currentPath
   .split("/")
@@ -26,7 +39,7 @@ const atest = (word) => {
     isfocus={atest("posts") ? true : false}
   />
   {
-    tags.map((t) => (
+    tagsFiltered.map((t) => (
       <ChipsFilter
         name={t.name}
         slug={`/posts/tag/${t.slug}`}

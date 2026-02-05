@@ -1,7 +1,10 @@
 ---
+import { join } from "node:path";
+import { AstroFont } from "astro-font";
 import "@drowr/licid/styles.css";
 import { ClientRouter } from "astro:transitions";
-import { Header, PreloadFontsHead } from "@drowr/licid";
+//import { Header, PreloadFontsHead } from "@drowr/licid";
+import { Header } from "@drowr/licid";
 import config from "../config/config.json";
 
 interface Props {
@@ -11,13 +14,59 @@ interface Props {
 }
 
 const { title, description, author } = Astro.props;
+const fontPrefix = import.meta.env.PROD
+  ? Astro.site.toString()
+  : join(process.cwd(), "public");
+
+console.log(fontPrefix);
+console.log(import.meta.env.PROD);
+console.log(Astro.site.toString());
 ---
 
 <html lang="en" class="mode-auto">
   <head>
     <meta charset="utf-8" />
-    <!-- Preload experimental fonts feature Astro 5 -->
+    <!-- Preload experimental fonts feature Astro 5
     <PreloadFontsHead />
+    -->
+    <AstroFont
+      config={[
+        {
+          name: "Plain",
+          cssVariable: "font-plain",
+          preload: false,
+          src: [
+            {
+              weight: "500",
+              style: "normal",
+              path: join(fontPrefix, "fonts", "IosevkaEtoile-Medium.woff2"),
+              display: "swap",
+            },
+            {
+              weight: "400",
+              style: "normal",
+              path: join(fontPrefix, "fonts", "IosevkaEtoile-Regular.woff2"),
+              display: "swap",
+            },
+          ],
+        },
+        {
+          name: "Brand",
+          cssVariable: "font-brand",
+          preload: false,
+          src: [
+            {
+              weight: "400",
+              style: "normal",
+              path: join(fontPrefix, "fonts", "SkullAndVoid.otf"),
+              display: "swap",
+            },
+          ],
+          fallback: "sans-serif",
+        },
+      ]}
+    />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />

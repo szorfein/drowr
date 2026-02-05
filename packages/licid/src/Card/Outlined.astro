@@ -33,51 +33,55 @@ const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
 <div
   class="card-outlined bg-surface text-primary border-outline hover:border-outlineVariant dark:bg-dark-surface dark:text-dark-primary dark:border-dark-outline dark:hover:border-dark-outlineVariant rounded-xl border"
 >
-  <div class="hover:bg-onSurface/10 dark:hover:bg-dark-onSurface/10 h-full">
-    <div class="card-outined p-4">
-      <div
-        class="label-small text-onSurfaceVariant dark:text-dark-onSurfaceVariant mb-2 inline-block w-full"
-      >
-        <DateRange
-          width={24}
-          height={24}
-          fill="currentColor"
-          class="fill-onSurfaceVariant dark:fill-dark-onSurfaceVariant inline-block"
-        />
-        <span class="align-bottom">{formattedDate}</span>
-      </div>
-      <h2 class="headline-medium text-onSurface dark:text-dark-onSurface mb-3">
-        {title}
-      </h2>
-      <div class="font-(font-family:display-large) text-primary">
-        <slot name="header" />
-      </div>
-      <div class="text-3xl">
-        <slot name="footer" />
-      </div>
-      <div class="body-small text-onSurface dark:text-dark-onSurface mb-4">
-        {brief}
-      </div>
-      <div class="flex flex-wrap gap-1">
-        {
-          tags.map((tag) => (
-            <span class="text-onSurface dark:text-dark-onSurface">
-              <ChipsSuggestion name={tag.name} slug={tag.slug} />
-            </span>
-          ))
-        }
-      </div>
-      <div class="mt-4">
-        <a href={`/post/${slug}`}>Read more </a>
-        <ArrowForward
-          width={24}
-          height={24}
-          fill="currentColor"
-          class="fill-primary dark:fill-dark-primary link inline-block"
-        />
+  <a href={`/post/${slug}`} aria-label={`See post ${title}`}>
+    <div class="hover:bg-onSurface/10 dark:hover:bg-dark-onSurface/10 h-full">
+      <div class="card-outined p-4">
+        <div
+          class="label-small text-onSurfaceVariant dark:text-dark-onSurfaceVariant mb-2 inline-block w-full"
+        >
+          <DateRange
+            width={24}
+            height={24}
+            fill="currentColor"
+            class="fill-onSurfaceVariant dark:fill-dark-onSurfaceVariant inline-block"
+          />
+          <span class="align-bottom">{formattedDate}</span>
+        </div>
+        <h2
+          class="headline-medium text-onSurface dark:text-dark-onSurface mb-3"
+        >
+          {title}
+        </h2>
+        <div class="font-(font-family:display-large) text-primary">
+          <slot name="header" />
+        </div>
+        <div class="text-3xl">
+          <slot name="footer" />
+        </div>
+        <div class="body-small text-onSurface dark:text-dark-onSurface mb-4">
+          {brief}
+        </div>
+        <div class="flex flex-wrap gap-1">
+          {
+            tags.map((tag) => (
+              <span class="text-onSurface dark:text-dark-onSurface">
+                <ChipsSuggestion name={tag.name} slug={tag.slug} />
+              </span>
+            ))
+          }
+        </div>
+        <div class="mt-4">
+          <a href={`/post/${slug}`}>Read more </a>
+          <ArrowForward
+            width={24}
+            height={24}
+            fill="currentColor"
+            class="fill-primary dark:fill-dark-primary link inline-block"
+          />
+        </div>
       </div>
     </div>
-  </div>
+  </a>
 </div>
 
 <style>
