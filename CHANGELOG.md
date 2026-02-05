@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.17.3
+## 0.17.4
 
 - /posts can filtering post by tags
 - New brand font, use [astro-font](https://github.com/rishi-raj-jain/astro-font) to reduce LCP.
@@ -22,6 +22,7 @@
 
 ### Fixes
 
+- Vercel fonts path
 - ShareIt, correct the Linkedin site origin
 - Outlined Card can be clicked
 - Wrong color on OnVariantSurface for light theme.
