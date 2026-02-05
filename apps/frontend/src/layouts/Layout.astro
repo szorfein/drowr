@@ -5,7 +5,7 @@ import "@drowr/licid/styles.css";
 import { ClientRouter } from "astro:transitions";
 //import { Header, PreloadFontsHead } from "@drowr/licid";
 import { Header } from "@drowr/licid";
-import config from "../config/config.json";
+import config from "@/config/config.json";
 
 interface Props {
   title?: string;
@@ -15,7 +15,7 @@ interface Props {
 
 const { title, description, author } = Astro.props;
 const fontPrefix = import.meta.env.PROD
-  ? Astro.site.toString()
+  ? config.site.base_url
   : join(process.cwd(), "public");
 
 console.log(fontPrefix);
