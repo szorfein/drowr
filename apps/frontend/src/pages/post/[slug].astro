@@ -38,6 +38,7 @@ const post = await getPost(slug);
           url={`${config.site.base_url}/post/${slug}`}
           title={post.title}
           description={post.subtitle}
+          origin={config.site.base_url}
         />
       </div>
     </article>

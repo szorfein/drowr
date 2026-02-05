@@ -1,7 +1,9 @@
 # Changelog
 
-## 0.15.1
+## 0.17.3
 
+- /posts can filtering post by tags
+- New brand font, use [astro-font](https://github.com/rishi-raj-jain/astro-font) to reduce LCP.
 - New last desktop on / and Hashnode request QueryPostsByTags
 - Add a navigation bar by tags on /posts
 - New Hero on /
@@ -20,6 +22,8 @@
 
 ### Fixes
 
+- ShareIt, correct the Linkedin site origin
+- Outlined Card can be clicked
 - Wrong color on OnVariantSurface for light theme.
 
 ### About Biome
