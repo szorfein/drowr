@@ -10,7 +10,9 @@ const { author } = Astro.props;
 >
   <div class="max-[900px] z-10 text-center transition-colors ease-out">
     <div class="body-large">Hi, I'm</div>
-    <h1 class="text-primary dark:text-dark-primary display-medium">{author}</h1>
+    <h1 class="text-primary dark:text-dark-primary display-medium">
+      <a href="/about" label="about">{author}</a>
+    </h1>
     <p class="title-large py-4">Fullstack JS & Creative coder</p>
     <p class="body-small max-w-150">
       Audidact, Linux ricer. This is my site, where i share my last Linux

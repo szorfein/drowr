@@ -197,3 +197,41 @@ export const getAllPostsByTag = async (first, tagName) => {
   );
   return allPosts;
 };
+
+// Static page created on Hashnode. Dashboard > Pages
+export const getStaticPage = async (name) => {
+  const client = getClient();
+
+  const page = await client.request(
+    gql`
+        query PageByPublication {
+            publication(host: "${myHashnodeURL}") {
+                id
+                url
+                followersCount
+                author {
+                    name
+                    username
+                    profilePicture
+                    followersCount
+                }
+                staticPage(slug: "${name}") {
+                    id
+                    title
+                    slug
+                    seo {
+                        description
+                    }
+                    ogMetaData {
+                        image
+                    }
+                    content {
+                        markdown
+                    }
+                }
+            }
+        }
+        `,
+  );
+  return page;
+};
