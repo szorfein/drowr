@@ -111,6 +111,9 @@ export const getPost = async (slug: string) => {
                         title
                         description
                     }
+                    ogMetaData {
+                        image
+                    }
                 }
             }
         }

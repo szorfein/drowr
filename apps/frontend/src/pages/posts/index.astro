@@ -1,8 +1,8 @@
 ---
 import { CardOutlined, HeroBlogPost } from "@drowr/licid";
-import Layout from "../../layouts/Layout.astro";
-import TagNavigation from "../../components/TagNavigation.astro";
-import { getAllPosts } from "../../lib/client";
+import TagNavigation from "@/components/TagNavigation.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getAllPosts } from "@/lib/client";
 
 const data = await getAllPosts();
 const allPosts = data.publication.posts.edges;
