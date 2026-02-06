@@ -1,0 +1,58 @@
+---
+import { CardOutlined, HeroBlogPost } from "@drowr/licid";
+import TagNavigation from "@/components/TagNavigation.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getAllPosts } from "@/lib/client";
+
+export async function getStaticPaths() {
+  const data = await getAllPosts();
+  const allPosts = data.publication.posts.edges;
+
+  const allTags = [...new Set(allPosts.flatMap((post) => post.node.tags))];
+  const jsonObject = allTags.map(JSON.stringify);
+  const uniqueSet = new Set(jsonObject);
+  const uniqueTags = Array.from(uniqueSet).map(JSON.parse);
+
+  return uniqueTags.map((uTag) => {
+    const filteredPosts = [];
+    allPosts.forEach((post) => {
+      const tags = post.node.tags;
+      tags.forEach((tag) => {
+        if (tag.slug === uTag.slug) {
+          filteredPosts.push(post);
+        }
+      });
+    });
+    return {
+      params: { tag: uTag.slug },
+      props: { posts: filteredPosts, matchedTag: uTag },
+    };
+  });
+}
+
+const { tag } = Astro.params;
+const { posts, matchedTag } = Astro.props;
+---
+
+<Layout>
+  <div class="container">
+    <HeroBlogPost />
+    <TagNavigation />
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      {
+        posts.map((post) => (
+          <CardOutlined
+            brief={post.node.subtitle}
+            title={post.node.title}
+            publishedAt={post.node.publishedAt}
+            tags={post.node.tags}
+            slug={post.node.slug}
+          >
+            <Fragment slot="header" />
+            <Fragment slot="footer" />
+          </CardOutlined>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

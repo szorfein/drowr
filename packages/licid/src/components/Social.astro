@@ -1,0 +1,79 @@
+---
+import GithubIcon from "../assets/icons/github.svg";
+import RubyIcon from "../assets/icons/ruby.svg";
+import MastodonIcon from "../assets/icons/mastodon.svg";
+import ProtonmailIcon from "../assets/icons/protonmail.svg";
+---
+
+<div class="relative top-2 mt-6 justify-self-center md:top-4">
+  <div class="flex w-full items-center justify-center gap-6 py-2 md:py-6">
+    <a
+      href="https://github.com/szorfein"
+      target="_blank"
+      aria-label="Github profile"
+    >
+      <button
+        class="flex h-12 w-12 transform justify-center rounded-full border-2 border-black bg-white text-2xl text-black duration-500 hover:-translate-y-3 hover:bg-black hover:text-white md:h-14 md:w-14 dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black"
+      >
+        <GithubIcon
+          width={24}
+          height={24}
+          class="size-8 place-self-center md:size-10"
+          title="Github"
+        />
+      </button>
+    </a>
+
+    <a
+      href="https://rubygems.org/profiles/szorfein"
+      target="_blank"
+      aria-label="Rubygem profile"
+    >
+      <button
+        class="flex h-12 w-12 transform justify-center rounded-full border-2 border-red-500 bg-white text-2xl text-red-500 duration-500 hover:-translate-y-3 hover:bg-red-500 hover:text-white md:h-14 md:w-14 dark:border-red-400 dark:bg-black dark:text-red-400 dark:hover:bg-red-400 dark:hover:text-black"
+      >
+        <RubyIcon
+          width={24}
+          height={24}
+          class="size-8 place-self-center md:size-10"
+          title="Rubygems"
+        />
+      </button>
+    </a>
+
+    <a
+      href="https://mastodon.social/@szorfein"
+      target="_blank"
+      aria-label="Mastodon profile"
+    >
+      <button
+        class="flex h-12 w-12 transform justify-center rounded-full border-2 border-indigo-500 bg-white text-2xl text-indigo-500 duration-500 hover:-translate-y-3 hover:bg-indigo-500 hover:text-white md:h-14 md:w-14 dark:border-indigo-400 dark:bg-black dark:text-indigo-400 dark:hover:bg-indigo-400 dark:hover:text-black"
+      >
+        <MastodonIcon
+          width={24}
+          height={24}
+          class="size-8 place-self-center md:size-10"
+          title="Mastodon"
+        />
+      </button>
+    </a>
+
+    <a
+      href="https://mastodon.social/@szorfein"
+      target="_blank"
+      aria-label="By mail"
+    >
+      <button
+        id="mastodon"
+        class="flex h-12 w-12 transform justify-center rounded-full border-2 border-violet-500 bg-white text-2xl text-violet-500 duration-500 hover:-translate-y-3 hover:bg-violet-500 hover:text-white md:h-14 md:w-14 dark:border-violet-400 dark:bg-black dark:text-violet-400 dark:hover:bg-violet-400 dark:hover:text-black"
+      >
+        <ProtonmailIcon
+          width={24}
+          height={24}
+          class="size-8 place-self-center md:size-10"
+          title="Mail"
+        />
+      </button>
+    </a>
+  </div>
+</div>
