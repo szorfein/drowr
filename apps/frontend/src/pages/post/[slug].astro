@@ -4,7 +4,16 @@ import Layout from "@/layouts/Layout.astro";
 import { getAllPosts, getPost } from "@/lib/client";
 import { HeroPost, MarkdownCode, ShareIt } from "@drowr/licid";
 import { Markdown } from "@astropub/md";
+import { Image } from "astro:assets";
 import config from "@/config/config.json";
+
+function isATheme(item) {
+  const hasTheme = item.tags.map((tag) => tag.name).includes("themes");
+  if (hasTheme) {
+    return true;
+  }
+  return false;
+}
 
 export async function getStaticPaths() {
   const data = await getAllPosts();
@@ -19,7 +28,11 @@ const { slug } = Astro.params;
 const post = await getPost(slug);
 ---
 
-<Layout title={`${post.seo.title} | Drowr`} description={post.seo.description}>
+<Layout
+  title={`${post.seo.title} | Drowr`}
+  description={post.seo.description}
+  image={post?.ogMetaData?.image}
+>
   <LayoutPost>
     <article>
       <div class="container">
@@ -30,6 +43,23 @@ const post = await getPost(slug);
           updatedAt={post.updatedAt}
         />
         <div class="post-content">
+          {
+            isATheme(post) ? (
+              <Image
+                src={post?.ogMetaData?.image}
+                alt={`Image of ${post?.title}`}
+                class="rounded pb-10"
+                loading="lazy"
+                decoding="async"
+                width="990"
+                height="650"
+                fetchpriority="auto"
+                format="webp"
+              />
+            ) : (
+              ""
+            )
+          }
           <MarkdownCode>
             <Markdown of={post?.content?.markdown} />
           </MarkdownCode>

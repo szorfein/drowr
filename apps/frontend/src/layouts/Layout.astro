@@ -3,7 +3,6 @@ import { join } from "node:path";
 import { AstroFont } from "astro-font";
 import "@drowr/licid/styles.css";
 import { ClientRouter } from "astro:transitions";
-//import { Header, PreloadFontsHead } from "@drowr/licid";
 import { Header } from "@drowr/licid";
 import config from "@/config/config.json";
 
@@ -11,9 +10,10 @@ interface Props {
   title?: string;
   description?: string;
   author?: string;
+  image?: string;
 }
 
-const { title, description, author } = Astro.props;
+const { title, description, author, image } = Astro.props;
 const fontPrefix = import.meta.env.PROD ? "/" : join(process.cwd(), "public");
 
 console.log(fontPrefix);
@@ -24,9 +24,7 @@ console.log(Astro.site.toString());
 <html lang="en" class="mode-auto">
   <head>
     <meta charset="utf-8" />
-    <!-- Preload experimental fonts feature Astro 5
-    <PreloadFontsHead />
-    -->
+
     <AstroFont
       config={[
         {
@@ -104,6 +102,22 @@ console.log(Astro.site.toString());
       name="twitter:description"
       content={description ? description : config.site.description}
     />
+
+    { image ? (
+    <!-- og-image -->
+    <meta
+      property="og:image"
+      content={image}
+    />
+    <!-- twitter-image -->
+    <meta
+      name="twitter:image"
+      content={image}
+    />
+    ) : (
+    ''
+    )
+    }
 
     <meta name="twitter:card" content="summary_large_image" />
   </head>
