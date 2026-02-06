@@ -1,7 +1,10 @@
 # Changelog
 
-## 0.17.4
+## 0.20.4
 
+- Display image on `/post/[slug]` for post tagged with `themes`
+- Add og image on header.
+- New routes on `/posts/[tag]` and `/about`
 - /posts can filtering post by tags
 - New brand font, use [astro-font](https://github.com/rishi-raj-jain/astro-font) to reduce LCP.
 - New last desktop on / and Hashnode request QueryPostsByTags
