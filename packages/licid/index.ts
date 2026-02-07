@@ -8,6 +8,7 @@ import HeroAbout from "./src/blocks/hero/About.astro";
 import HeroBlogPost from "./src/blocks/hero/BlogPost.astro";
 import PreloadFontsHead from "./src/PreloadFontsHead.astro";
 import CardOutlined from "./src/Card/Outlined.astro";
+import CardSkill from "./src/Card/Skill.astro";
 import TypoDisplayLarge from "./src/Typo/DisplayLarge.astro";
 import ChipsSuggestion from "./src/components/chips/Suggestion.astro";
 import ChipsFilter from "./src/components/chips/Filter.astro";
@@ -20,6 +21,7 @@ export {
   PreloadFontsHead,
   Header,
   CardOutlined,
+  CardSkill,
   TypoDisplayLarge,
   ChipsSuggestion,
   ChipsFilter,

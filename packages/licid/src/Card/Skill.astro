@@ -1,0 +1,50 @@
+---
+import CodeIcon from "../assets/icons/code.svg";
+import DatabaseIcon from "../assets/icons/database.svg";
+
+const { title, skills } = Astro.props;
+---
+
+<div
+  class="bg-surface dark:bg-dark-surface cursor-pointer rounded-2xl border transition-all"
+>
+  <div class="hover:bg-primary/8 dark:hover:bg-dark-primary/8 rounded-2xl p-6">
+    <!-- header -->
+    <div class="mb-5 flex items-center gap-3">
+      <div
+        class="bg-primary/8 dark:bg-dark-primary/8 border-primary dark:border-dark-primary flex h-10 w-10 items-center justify-center rounded-full border"
+      >
+        {
+          title === "Frontend" ? (
+            <CodeIcon
+              height={24}
+              width={24}
+              class="fill-primary dark:fill-dark-primary flex items-center justify-center"
+              fill="none"
+            />
+          ) : (
+            <DatabaseIcon
+              height={24}
+              width={24}
+              class="fill-primary dark:fill-dark-primary flex items-center justify-center"
+              fill="none"
+            />
+          )
+        }
+      </div>
+      <h3 class="title-large">{title}</h3>
+    </div>
+    <!-- Skill list -->
+    <div class="flex flex-wrap gap-2">
+      {
+        skills.map((s) => (
+          <div class="label-large bg-surfaceContainerLow dark:bg-dark-surfaceContainerLow text-onSurfaceVariant dark:text-dark-onSurfaceVariant rounded-lg border">
+            <span class="hover:bg-primary/8 dark:hover:bg-dark-primary/8 rounded-lg px-3 py-1.5">
+              {s}
+            </span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>

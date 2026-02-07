@@ -1,7 +1,9 @@
 # Changelog
 
-## 0.20.4
+## 0.22.4
 
+- Newsletter with kit.com
+- New skills on /
 - Display image on `/post/[slug]` for post tagged with `themes`
 - Add og image on header.
 - New routes on `/posts/[tag]` and `/about`
