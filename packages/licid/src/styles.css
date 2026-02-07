@@ -16,6 +16,7 @@
   --color-error: #ba1a1a;
   --color-surface: #f5fafc;
   --color-surfaceContainerLow: #eff5f6;
+  --color-surfaceContainerHighest: #dee3e5;
   --color-onSurface: #171d1e;
   --color-onSurfaceVariant: #3f484a;
   --color-outline: #6f797b;
@@ -27,6 +28,7 @@
   --color-dark-error: #ffb4ab;
   --color-dark-surface: #0e1416;
   --color-dark-surfaceContainerLow: #171d1e;
+  --color-dark-surfaceContainerHighest: #303637;
   --color-dark-onSurface: #dee3e5;
   --color-dark-onSurfaceVariant: #bfc8ca;
   --color-dark-outline: #899295;
