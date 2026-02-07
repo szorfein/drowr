@@ -1,0 +1,21 @@
+---
+import { CardSkill } from "@drowr/licid";
+
+const frontend = ["Astro", "Vue.js"];
+const backend = ["Fastify", "Sql"];
+---
+
+<section class="skills pt-2 pb-12">
+  <h2 class="headline-large mb-3 text-center">Skills & Technologies</h2>
+  <p class="body-medium mb-12 text-center">
+    Tools and technologies I work with
+  </p>
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <div>
+      <CardSkill title="Frontend" skills={frontend} />
+    </div>
+    <div>
+      <CardSkill title="Backend" skills={backend} />
+    </div>
+  </div>
+</section>
