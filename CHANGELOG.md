@@ -1,7 +1,8 @@
 # Changelog
 
-## 0.22.4
+## 0.23.4
 
+- Comments with [Giscus](https://giscus.app/)
 - Newsletter with kit.com
 - New skills on /
 - Display image on `/post/[slug]` for post tagged with `themes`
