@@ -5,6 +5,8 @@ import config from "./src/config/config.json";
 
 import vercel from "@astrojs/vercel";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
   site: config.site.base_url,
@@ -14,5 +16,6 @@ export default defineConfig({
   },
 
   adapter: vercel(),
+  integrations: [sitemap()],
 });
 
