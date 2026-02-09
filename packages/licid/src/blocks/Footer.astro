@@ -1,0 +1,61 @@
+---
+import GithubIcon from "../assets/icons/github.svg";
+import LemmyIcon from "../assets/icons/lemmy.svg";
+import MastodonIcon from "../assets/icons/mastodon.svg";
+import RubyIcon from "../assets/icons/ruby.svg";
+
+const year = new Date().getFullYear();
+const copyright = `© Drowr ${year}.`;
+const socialLinks = [
+  { name: "github", link: "https://github.com/szorfein", icon: GithubIcon },
+  {
+    name: "rubygems",
+    link: "https://rubygems.org/profiles/szorfein",
+    icon: RubyIcon,
+  },
+  {
+    name: "mastodon",
+    link: "https://mastodon.social/@szorfein",
+    icon: MastodonIcon,
+  },
+  { name: "lemmy", link: "https://lemmy.ml/u/Szorfein", icon: LemmyIcon },
+];
+---
+
+<footer>
+  <div class="border-outline dark:border-dark-outline border-t py-4">
+    <div class="container mx-auto px-6">
+      <div
+        class="grid grid-cols-4 items-center gap-6 md:grid-cols-8 lg:grid-cols-12"
+      >
+        <div class="body-small col-span-2 md:col-span-4 lg:col-span-6">
+          {copyright}
+        </div>
+        <nav class="col-span-2 text-right md:col-span-4 lg:col-span-6">
+          <ul class="flex items-center justify-end gap-6">
+            {
+              socialLinks.map((sl) => (
+                <li>
+                  <a
+                    href={sl.link}
+                    target="blank"
+                    aria-label={`link on ${sl.name}`}
+                  >
+                    {
+                      <sl.icon
+                        width={24}
+                        height={24}
+                        class="fill-onSurface dark:fill-dark-onSurface"
+                        fill="none"
+                      />
+                    }
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
