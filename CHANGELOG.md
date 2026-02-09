@@ -1,7 +1,9 @@
 # Changelog
 
-## 0.23.4
+## 0.25.4
 
+- Add sitemap
+- Add a footer
 - Comments with [Giscus](https://giscus.app/)
 - Newsletter with kit.com
 - New skills on /

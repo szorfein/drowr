@@ -2,6 +2,7 @@
 // Then, use this file to export everything you want your user to access.
 
 import Header from "./src/Header.astro";
+import Footer from "./src/blocks/Footer.astro";
 import HeroHome from "./src/blocks/hero/Home.astro";
 import HeroPost from "./src/blocks/hero/Post.astro";
 import HeroAbout from "./src/blocks/hero/About.astro";
@@ -20,6 +21,7 @@ import Social from "./src/components/Social.astro";
 export {
   PreloadFontsHead,
   Header,
+  Footer,
   CardOutlined,
   CardSkill,
   TypoDisplayLarge,

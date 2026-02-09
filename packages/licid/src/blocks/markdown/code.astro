@@ -15,12 +15,15 @@ import "../../styles.css";
       @apply font-brand text-[22pt] leading-[28pt] font-normal tracking-[0] not-italic font-stretch-normal;
     }
     pre.astro-code {
-      @apply my-6 rounded-lg p-1 text-pretty;
-      @apply font-plain text-[12pt] leading-[16pt] font-normal tracking-[0.1pt] not-italic font-stretch-normal;
+      @apply my-6 overflow-auto rounded-lg p-4 wrap-break-word;
+      @apply font-plain text-[14pt] leading-[20pt] font-normal tracking-[0] not-italic font-stretch-normal;
     }
     p {
       @apply font-plain text-[14pt] leading-[20pt] font-normal tracking-[0] not-italic font-stretch-normal;
       @apply py-2;
+    }
+    p a {
+      @apply text-primary dark:text-dark-primary border-b-surface dark:border-b-dark-surface hover:border-b-primary dark:hover:border-b-dark-primary border-b border-solid;
     }
   }
 </style>
