@@ -4,7 +4,8 @@ import LemmyIcon from "../assets/icons/lemmy.svg";
 import MastodonIcon from "../assets/icons/mastodon.svg";
 import RubyIcon from "../assets/icons/ruby.svg";
 
-const copyright = "© Drowr 2024.";
+const year = new Date().getFullYear();
+const copyright = `© Drowr ${year}.`;
 const socialLinks = [
   { name: "github", link: "https://github.com/szorfein", icon: GithubIcon },
   {
@@ -35,7 +36,11 @@ const socialLinks = [
             {
               socialLinks.map((sl) => (
                 <li>
-                  <a href={sl.link} aria-label={`link on ${sl.name}`}>
+                  <a
+                    href={sl.link}
+                    target="blank"
+                    aria-label={`link on ${sl.name}`}
+                  >
                     {
                       <sl.icon
                         width={24}
