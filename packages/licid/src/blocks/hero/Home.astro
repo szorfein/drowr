@@ -1,4 +1,6 @@
 ---
+import ButtonFilled from "../../components/button/Filled.astro";
+
 interface Props {
   author?: string;
 }
@@ -20,15 +22,7 @@ const { author } = Astro.props;
     </p>
     <div class="mt-8 mb-12 flex flex-wrap justify-center gap-4">
       <!-- button filled -->
-      <div
-        class="bg-primary dark:bg-dark-primary text-onPrimary dark:text-dark-onPrimary flex min-h-14 rounded-full"
-      >
-        <div class="hover:bg-onPrimary/10 dark:hover:bg-dark-onPrimary/10 flex">
-          <a class="flex items-center px-6" href="/">
-            <span class="label-medium">View projects -&gt;</span>
-          </a>
-        </div>
-      </div>
+      <ButtonFilled text="View projects ->" goto="/" />
       <!-- button outlined -->
       <div
         class="bg-outlineVariant dark:bg-dark-outlineVariant text-onSurfaceVariant dark:text-dark-onSurfaceVariant flex min-h-14 rounded-full"
