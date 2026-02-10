@@ -1,0 +1,60 @@
+---
+import { ButtonFilled } from "@drowr/licid";
+---
+
+<section class="pt-10 pb-16">
+  <div class="text-center">
+    <h2
+      class="headline-large text-onSurface dark:text-dark-onSurface py-4 pb-6"
+    >
+      Join the Newsletter
+    </h2>
+    <div class="text-onSurface dark:text-dark-onSurface body-medium pb-7">
+      Subscribe to get our latest content by email.
+    </div>
+  </div>
+
+  <form id="subscribe" method="POST" class="mx-auto max-w-xl">
+    <div class="relative">
+      <div class="flex flex-col gap-4 sm:flex-row">
+        <div class="grow content-center">
+          <label for="email" class="sr-only">Email address</label>
+          <input
+            class="bg-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest label-large text-onSurfaceVariant dark:text-dark-onSurfaceVariant relative flex w-full border-0 p-2"
+            name="email"
+            aria-label="Email Address"
+            placeholder="Email Address"
+            required
+            type="email"
+          />
+        </div>
+        <ButtonFilled text="Subscribe" type="submit" />
+      </div>
+    </div>
+  </form>
+  <div
+    class="label-small text-onSurface dark:text-dark-onSurface pt-6 text-center"
+  >
+    We won't send you spam. Unsubscribe at any time.
+  </div>
+</section>
+
+<script>
+  import { actions } from "astro:actions";
+  //import { navigate } from "astro:transitions/client";
+
+  const form = document.getElementById("subscribe");
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const { data, error } = await actions.newsletter(formData);
+    if (!error) {
+      // navigate("/");
+      if (data.data === "PENDING") {
+        alert("Success! Now check your email to confirm your subscription.");
+      }
+    }
+    //console.log(error);
+    //console.log(data);
+  });
+</script>
