@@ -16,6 +16,7 @@ import ChipsFilter from "./src/components/chips/Filter.astro";
 import MarkdownCode from "./src/blocks/markdown/code.astro";
 import ShareIt from "./src/blocks/ShareIt.astro";
 import Social from "./src/components/Social.astro";
+import ButtonFilled from "./src/components/button/Filled.astro";
 
 // Don't use 'export default' here
 export {
@@ -34,4 +35,5 @@ export {
   MarkdownCode,
   ShareIt,
   Social,
+  ButtonFilled,
 };

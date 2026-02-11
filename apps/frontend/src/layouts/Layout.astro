@@ -1,7 +1,7 @@
 ---
 import { join } from "node:path";
+import '@/styles.css'
 import { AstroFont } from "astro-font";
-import "@drowr/licid/styles.css";
 import { ClientRouter } from "astro:transitions";
 import { Header, Footer } from "@drowr/licid";
 import config from "@/config/config.json";
@@ -121,6 +121,7 @@ console.log(Astro.site.toString());
     }
 
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="fediverse:creator" content="@szorfein@mastodon.social" />
   </head>
   <body>
     <Header />

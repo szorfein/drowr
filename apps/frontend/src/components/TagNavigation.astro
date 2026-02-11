@@ -5,7 +5,11 @@ import { getAllPosts } from "@/lib/client";
 const data = await getAllPosts();
 const allPosts = data.publication.posts.edges;
 
-const tags = [...new Set(allPosts.flatMap((post) => post.node.tags))];
+const allTags = allPosts.flatMap((post) => post.node.tags);
+const allTagsName = allTags.map((tag) => tag.name);
+const allTagsSlug = allTags.map((tag) => tag.slug);
+const tags = [...new Set(allTagsName)];
+const tagsSlug = [...new Set(allTagsSlug)];
 
 const currentPath = new URL(Astro.request.url).pathname;
 const pathSegments = currentPath
@@ -27,11 +31,11 @@ const atest = (word) => {
     isfocus={atest("posts") ? true : false}
   />
   {
-    tags.map((t) => (
+    tags.map((t, i) => (
       <ChipsFilter
-        name={t.name}
-        slug={`/posts/${t.slug}`}
-        isfocus={atest(t.slug) ? true : false}
+        name={t}
+        slug={`/posts/${tagsSlug[i]}`}
+        isfocus={atest(`${tagsSlug[i]}`) ? true : false}
       />
     ))
   }
