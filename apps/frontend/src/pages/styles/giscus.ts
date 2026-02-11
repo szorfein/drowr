@@ -1,0 +1,15 @@
+export const prerender = false;
+
+import css from "@drowr/licid/styles.css?raw";
+//import css from "@/styles/giscus.css?raw";
+//import css from "@/styles.css?raw";
+
+export async function ALL() {
+  const res = new Response(css);
+
+  res.headers.set("Content-Type", "text/css");
+  res.headers.set("Access-Control-Allow-Origin", "*");
+  res.headers.set("Access-Control-Allow-Methods", "GET, HEAD, OPTIONS");
+
+  return res;
+}

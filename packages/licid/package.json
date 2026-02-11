@@ -19,7 +19,7 @@
     "astro-component"
   ],
   "scripts": {
-    "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --minify",
+    "build:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
     "check-types": "astro check",
     "dev:styles": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch"
   },
