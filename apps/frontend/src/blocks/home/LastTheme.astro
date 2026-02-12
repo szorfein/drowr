@@ -28,12 +28,14 @@ const allPosts = data.publication.posts.edges;
     </>
   </p>
 
-  <div class="col-span-8 grid h-80 grid-rows-1 md:h-128">
+  <div
+    class="xs:h-90 col-span-8 grid h-80 grid-rows-1 sm:h-100 md:h-120 lg:h-140"
+  >
     <a href={`/post/${allPosts[0].node.slug}`}>
       <Image
         src={allPosts[0].node.coverImage.url}
         alt={`Last theme ${allPosts[0].node.title}`}
-        class="translate-y-8 rounded-lg shadow-2xl shadow-neutral-200 dark:shadow-neutral-950"
+        class="shadow-shadow dark:shadow-dark-shadow mx-auto translate-y-8 justify-center rounded-lg shadow-2xl"
         loading="lazy"
         decoding="async"
         width="990"

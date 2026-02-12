@@ -6,7 +6,7 @@ export const getClient = () => {
 
 const myHashnodeURL = "drowr.hashnode.dev";
 
-export const getAllPosts = async () => {
+export const getAllPosts = async (first = 20) => {
   const client = getClient();
 
   const allPosts = await client.request(
@@ -15,7 +15,7 @@ export const getAllPosts = async () => {
             publication(host: "${myHashnodeURL}") {
                 id
                 title
-                posts(first: 20) {
+                posts(first: ${first}) {
                     totalDocuments
                     edges {
                         node {

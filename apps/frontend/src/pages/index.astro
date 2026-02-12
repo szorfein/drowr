@@ -9,11 +9,15 @@ import config from "@/config/config.json";
 ---
 
 <Layout>
-  <div class="container">
-    <HeroHome author={config.site.author} />
-    <Skills />
-    <LastTheme />
-    <RecentsPosts />
-    <NewsLetterHashnode server:defer />
+  <div class="container mx-auto px-4">
+    <div class="mx-auto w-full lg:max-w-4xl">
+      <HeroHome author={config.site.author} />
+      <Skills />
+      <LastTheme />
+      <div class="pt-16 sm:pt-18 md:pt-20 lg:pt-30">
+        <RecentsPosts />
+      </div>
+      <NewsLetterHashnode server:defer />
+    </div>
   </div>
 </Layout>

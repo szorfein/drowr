@@ -1,8 +1,8 @@
 ---
-import { getAllPosts } from "@/lib/client";
 import { CardOutlined } from "@drowr/licid";
+import { getAllPosts } from "@/lib/client";
 
-const data = await getAllPosts();
+const data = await getAllPosts(5);
 const allPosts = data.publication.posts.edges;
 
 function filterPost(item) {
@@ -28,20 +28,28 @@ const allPostsFiltered = allPosts.filter(filterPost);
     >
   </h2>
   <p class="body-small mb-12 text-center">Latest articles from the blog</p>
-  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-    {
-      allPostsFiltered.map((post) => (
-        <CardOutlined
-          brief={post.node.subtitle}
-          title={post.node.title}
-          publishedAt={post.node.publishedAt}
-          tags={post.node.tags}
-          slug={post.node.slug}
-        >
-          <Fragment slot="header" />
-          <Fragment slot="footer" />
-        </CardOutlined>
-      ))
-    }
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <CardOutlined
+      brief={allPostsFiltered[0].node.subtitle}
+      title={allPostsFiltered[0].node.title}
+      publishedAt={allPostsFiltered[0].node.publishedAt}
+      tags={allPostsFiltered[0].node.tags}
+      slug={allPostsFiltered[0].node.slug}
+    />
+    <CardOutlined
+      brief={allPostsFiltered[1].node.subtitle}
+      title={allPostsFiltered[1].node.title}
+      publishedAt={allPostsFiltered[1].node.publishedAt}
+      tags={allPostsFiltered[1].node.tags}
+      slug={allPostsFiltered[1].node.slug}
+    />
+    <CardOutlined
+      brief={allPostsFiltered[2].node.subtitle}
+      title={allPostsFiltered[2].node.title}
+      publishedAt={allPostsFiltered[2].node.publishedAt}
+      tags={allPostsFiltered[2].node.tags}
+      slug={allPostsFiltered[2].node.slug}
+      classes="hidden lg:block"
+    />
   </div>
 </section>

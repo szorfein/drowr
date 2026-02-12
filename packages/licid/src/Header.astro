@@ -1,5 +1,4 @@
 ---
-import "./styles.css";
 import Logo from "./Logo.astro";
 import IconMenu from "./assets/icons/menu.svg";
 import IconSearch from "./assets/icons/search.svg";
@@ -7,8 +6,8 @@ import ButtonIcon from "./components/button/IconStandard.astro";
 import ThemeSwitcher from "./components/header/ThemeSwitcher.astro";
 ---
 
-<header class="header sticky top-0 z-30">
-  <nav class="navbar container">
+<header class="bg-surface dark:bg-dark-surface sticky top-0 z-30 py-2">
+  <nav class="relative container flex flex-wrap items-center justify-between">
     {/* logo */}
     <div class="order-0">
       <Logo />
@@ -35,19 +34,3 @@ import ThemeSwitcher from "./components/header/ThemeSwitcher.astro";
     </div>
   </nav>
 </header>
-
-<style>
-  @reference "./styles.css";
-  svg {
-    color: var(--color-primary);
-    @media (prefers-color-scheme: dark) {
-      color: var(--color-dark-primary);
-    }
-  }
-  .header {
-    @apply bg-surface dark:bg-dark-surface py-2;
-  }
-  .navbar {
-    @apply relative flex flex-wrap items-center justify-between;
-  }
-</style>

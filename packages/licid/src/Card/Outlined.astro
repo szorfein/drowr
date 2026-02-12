@@ -15,9 +15,10 @@ interface Props {
   publishedAt?: Date;
   brief?: string;
   tags?: Tag[] | undefined;
+  classes?: string;
 }
 
-const { title, slug, publishedAt, brief, tags } = Astro.props;
+const { title, slug, publishedAt, brief, tags, classes } = Astro.props;
 
 let options = {
   year: "numeric",
@@ -31,7 +32,7 @@ const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
 ---
 
 <div
-  class="card-outlined bg-surface text-primary border-outline hover:border-outlineVariant dark:bg-dark-surface dark:text-dark-primary dark:border-dark-outline dark:hover:border-dark-outlineVariant rounded-xl border"
+  class={`card-outlined bg-surface text-primary border-outline hover:border-outlineVariant dark:bg-dark-surface dark:text-dark-primary dark:border-dark-outline dark:hover:border-dark-outlineVariant rounded-xl border ${classes}`}
 >
   <a href={`/post/${slug}`} aria-label={`See post ${title}`}>
     <div
