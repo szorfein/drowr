@@ -1,5 +1,8 @@
 ---
 import ButtonFilled from "../../components/button/Filled.astro";
+import ButtonStyledGithub from "../../components/button/StyledGithub.astro";
+import ButtonStyledRuby from "../../components/button/StyledRuby.astro";
+import ButtonStyledMastodon from "../../components/button/StyledMastodon.astro";
 
 interface Props {
   author?: string;
@@ -10,13 +13,22 @@ const { author } = Astro.props;
 <section
   class="herohome relative flex items-center justify-center overflow-hidden py-8"
 >
+  <div class="absolute top-30 left-10 hidden lg:left-10 lg:block">
+    <ButtonStyledGithub />
+  </div>
+  <div class="absolute top-40 left-10 hidden lg:left-10 lg:block">
+    <ButtonStyledRuby />
+  </div>
+  <div class="absolute top-50 left-10 hidden lg:left-10 lg:block">
+    <ButtonStyledMastodon />
+  </div>
   <div class="max-[900px] z-10 text-center transition-colors ease-out">
     <div class="body-large">Hi, I'm</div>
-    <h1 class="text-primary dark:text-dark-primary display-medium">
+    <h1 class="text-primary dark:text-dark-primary display-large">
       <a href="/about" label="about">{author}</a>
     </h1>
-    <p class="title-large py-4">Fullstack JS & Creative coder</p>
-    <p class="body-small max-w-150">
+    <p class="headline-medium py-4">Fullstack JS & Creative coder</p>
+    <p class="body-small max-w-150 py-1 md:py-4">
       Audidact, Linux ricer. This is my site, where i share my last Linux
       desktops, notes, and write tutorials...
     </p>

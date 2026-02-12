@@ -1,0 +1,12 @@
+---
+const { label, name, placeholder, type } = Astro.props;
+---
+
+<input
+  class="bg-surfaceContainerHighest dark:bg-dark-surfaceContainerHighest label-large text-onSurface dark:text-dark-onSurface placeholder:text-onSurfaceVariant dark:placeholder:text-dark-onSurfaceVariant hover:bg-onSurface/8 dark:hover:bg-dark-onSurface/8 focus:border-primary dark:focus:border-dark-primary relative flex h-14 w-full rounded-t-sm border-0 px-2 py-4 focus:border-b-2"
+  name={name}
+  aria-label={label}
+  placeholder={placeholder}
+  required
+  type={type}
+/>

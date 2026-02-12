@@ -21,6 +21,7 @@
   --color-onSurfaceVariant: #3f484a;
   --color-outline: #6f797b;
   --color-outlineVariant: #bfc8ca;
+  --color-shadow: #000000;
   /* dark colors */
   --color-dark-primary: #83d2e3;
   --color-dark-onPrimary: #00363e;
@@ -33,6 +34,7 @@
   --color-dark-onSurfaceVariant: #bfc8ca;
   --color-dark-outline: #899295;
   --color-dark-outlineVariant: #3f484a;
+  --color-dark-shadow: #000000;
 
   --font-brand: var(--font-brand);
   --font-plain: var(--font-plain);
