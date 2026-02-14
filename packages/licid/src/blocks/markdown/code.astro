@@ -1,5 +1,5 @@
 ---
-import "../../styles.css";
+
 ---
 
 <div class="code-markdown">
@@ -30,6 +30,12 @@ import "../../styles.css";
     }
     ul > li {
       @apply list-disc pl-1;
+    }
+    blockquote {
+      @apply border-primary my-2 rounded border-l-4 px-4 py-2;
+      p {
+        @apply font-plain text-[12pt] leading-[16pt] font-normal tracking-[0.1pt] not-italic font-stretch-normal;
+      }
     }
   }
 </style>
