@@ -14,6 +14,8 @@
   --color-onPrimary: #ffffff;
   --color-inverseSurface: #2b3133;
   --color-error: #ba1a1a;
+  --color-tertiaryContainer: #dbe1ff;
+  --color-onTertiaryContainer: #3c4665;
   --color-surface: #f5fafc;
   --color-surfaceContainerLow: #eff5f6;
   --color-surfaceContainerHighest: #dee3e5;
@@ -28,6 +30,8 @@
   --color-dark-inverseSurface: #dee3e5;
   --color-dark-error: #ffb4ab;
   --color-dark-surface: #0e1416;
+  --color-dark-tertiaryContainer: #3c4665;
+  --color-dark-onTertiaryContainer: #dbe1ff;
   --color-dark-surfaceContainerLow: #171d1e;
   --color-dark-surfaceContainerHighest: #303637;
   --color-dark-onSurface: #dee3e5;

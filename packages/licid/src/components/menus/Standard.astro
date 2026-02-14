@@ -1,0 +1,54 @@
+---
+import IconChevron from "../../assets/icons/chevron.svg";
+
+const { name, items } = Astro.props;
+---
+
+<span
+  role="menuitem"
+  class="header-menu-link flex items-center gap-1 py-4 lg:px-6"
+  >{name}
+  <IconChevron
+    height={24}
+    width={24}
+    fill
+    class="fill-onSurface dark:fill-dark-onSurface h-4 w-4"
+  /></span
+>
+
+<!-- Submenu -->
+<ul
+  class="header-submenu bg-surfaceContainerLow dark:bg-dark-surfaceContainerLow text-onSurface dark:text-dark-onSurface top-full left-0 hidden rounded-2xl px-4 lg:absolute lg:min-w-48 lg:p-0 [.header-menu-item.open_&]:block"
+>
+  {
+    items.map((item) => (
+      <li class="header-submenu-item hover:bg-tertiaryContainer hover:text-onTertiaryContainer hidden h-11 rounded-2xl px-4 py-2 [.header-menu-item.open_&]:block">
+        <a
+          href={item.href}
+          class="header-menu-link label-large relative flex items-center"
+          role="menuitem"
+        >
+          {item.name}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<script async defer>
+  document.addEventListener("astro:page-load", () => {
+    // menu dropdown
+    const menuItems = document.querySelectorAll(".header-menu-item");
+    menuItems.forEach((menuItem) => {
+      const submenu = menuItem.querySelector(".header-submenu");
+      const link = menuItem.querySelector(".header-menu-link");
+
+      if (submenu && link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          menuItem.classList.toggle("open");
+        });
+      }
+    });
+  });
+</script>
