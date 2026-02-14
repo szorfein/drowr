@@ -1,6 +1,12 @@
 # Drowr
 
-A 'little' site with various stack... heberged for free by Vercel. Blog contents are enhanced by AI with Hashnode. The UI use [material 3](https://https://m3.material.io/) recommendation. Followed by best Astro template's like [foxy](https://github.com/oxygenna-themes/foxi-astro-theme), [astroplate](https://github.com/zeon-studio/astroplate/tree/multilingual) and [darkness](https://github.com/kpab/astro-darkness/tree/working) help to keep a hight score in [PageSpeed Insight](https://pagespeed.web.dev/analysis/https-drowr-vercel-app/2ati6omvbl?form_factor=desktop).
+A 'little' site/blog with various stack... heberged for free by Vercel.
+
+- Blog contents, SEO, Title, Subtitle... are enhanced by AI with Hashnode.
+- Newsletter from Hashnode. (Request has been send and added in your Hashnode Dashboard but I've never see any confirmation email yet...[#601](https://github.com/anmode/grabtern-frontend/issues/601))
+- Comments use [Giscus](https://giscus.app/) so it use Github Discussions, Authentication.
+- The UI use [material 3](https://https://m3.material.io/) recommendation.
+- Inspired by best Astro template's like [foxy](https://github.com/oxygenna-themes/foxi-astro-theme), [astroplate](https://github.com/zeon-studio/astroplate/tree/multilingual) and [darkness](https://github.com/kpab/astro-darkness/tree/working) help to keep a high score in [PageSpeed Insight](https://pagespeed.web.dev/analysis/https-drowr-vercel-app/2ati6omvbl?form_factor=desktop).
 
 Powered by:
 

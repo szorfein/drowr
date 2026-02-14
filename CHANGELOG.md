@@ -1,9 +1,15 @@
 # Changelog
 
-## 0.30.0 - Feb. 2026
+## 0.33.0 - Feb. 2026
+
+### Enhancements for large layout
+
+- Add a Navigation bar
+- Social links on HeaderHero
 
 ### Fixes
 
+- Clean unused CSS
 - Fix the TagNavigation, make tag unique with Slug/Name.
 - Add the missing route `/pages/style/giscus` to load the css theme, Giscus look having problem with Tailwind [#41](https://github.com/giscus/giscus/issues/41), [#336](https://github.com/giscus/giscus/issues/336).
 - Use the Newsletter feature from [Hashnode](https://docs.hashnode.com/blogs/blog-dashboard/newsletters) instead of kit.com even if it doesn't work for now? 'Never receive confirmation Email' and without confirmation, you don't receive Email from subscribe...
