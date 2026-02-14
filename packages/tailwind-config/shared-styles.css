@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Load order
+@layer base        <- Global styles
+@layer components  <- Reusable components
+@layer utilities   <- Specific utilities (highest priority)
+*/
+
+@theme {
+  /* light colors */
+  --color-primary: #006877;
+  --color-onPrimary: #ffffff;
+  --color-inverseSurface: #2b3133;
+  --color-error: #ba1a1a;
+  --color-tertiaryContainer: #dbe1ff;
+  --color-onTertiaryContainer: #3c4665;
+  --color-surface: #f5fafc;
+  --color-surfaceContainerLow: #eff5f6;
+  --color-surfaceContainerHighest: #dee3e5;
+  --color-onSurface: #171d1e;
+  --color-onSurfaceVariant: #3f484a;
+  --color-outline: #6f797b;
+  --color-outlineVariant: #bfc8ca;
+  --color-shadow: #000000;
+  /* dark colors */
+  --color-dark-primary: #83d2e3;
+  --color-dark-onPrimary: #00363e;
+  --color-dark-inverseSurface: #dee3e5;
+  --color-dark-error: #ffb4ab;
+  --color-dark-surface: #0e1416;
+  --color-dark-tertiaryContainer: #3c4665;
+  --color-dark-onTertiaryContainer: #dbe1ff;
+  --color-dark-surfaceContainerLow: #171d1e;
+  --color-dark-surfaceContainerHighest: #303637;
+  --color-dark-onSurface: #dee3e5;
+  --color-dark-onSurfaceVariant: #bfc8ca;
+  --color-dark-outline: #899295;
+  --color-dark-outlineVariant: #3f484a;
+  --color-dark-shadow: #000000;
+
+  --font-brand: var(--font-brand);
+  --font-plain: var(--font-plain);
+}
+
+@layer base {
+  @import "./styles/giscus.css";
+  body {
+    @apply bg-surface text-onSurface dark:bg-dark-surface dark:text-dark-onSurface;
+  }
+}
+
+@layer components {
+  @import "./styles/fonts.css";
+  .container {
+    @apply mx-auto px-4 xl:max-w-330;
+  }
+  .my-display-large {
+    @apply text-error dark:text-dark-error;
+  }
+}

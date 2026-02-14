@@ -22,6 +22,7 @@
   "devDependencies": {
     "@drowr/eslint-config": "*",
     "@drowr/typescript-config": "*",
+    "@drowr/tailwind-config": "*",
     "astro-eslint-parser": "^1.2.2",
     "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
