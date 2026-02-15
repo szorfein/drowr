@@ -1,7 +1,14 @@
 ---
 import { Image } from "astro:assets";
+import {
+  ButtonStyledGithub,
+  ButtonStyledMastodon,
+  ButtonStyledRuby,
+  HeroAbout,
+  ListSubStats,
+  MarkdownCode,
+} from "@drowr/licid";
 import { Markdown } from "@astropub/md";
-import { HeroAbout, MarkdownCode, Social } from "@drowr/licid";
 import Layout from "@/layouts/Layout.astro";
 import { getStaticPage } from "@/lib/client";
 import PortraitWhite from "@/assets/images/portrait-white.png";
@@ -9,6 +16,30 @@ import PortraitBlack from "@/assets/images/portrait-black.png";
 
 const data = await getStaticPage("about");
 const page = data.publication.staticPage;
+
+// use https://substats.swo.moe
+const itemsSocialStat = [
+  {
+    icon: ButtonStyledGithub,
+    platform: "Github",
+    link: "https://github.com/szorfein",
+    text: "Followers",
+    api: "github/szorfein",
+  },
+  {
+    icon: ButtonStyledMastodon,
+    platform: "Mastodon",
+    link: "https://mastodon.social/@szorfein",
+    text: "Followers",
+    api: "mastodon/szorfein@mastodon.social",
+  },
+  {
+    icon: ButtonStyledRuby,
+    platform: "Rubygems",
+    link: "https://rubygems.org/profiles/szorfein",
+    text: "Followers",
+  },
+];
 ---
 
 <Layout
@@ -55,6 +86,11 @@ const page = data.publication.staticPage;
       </MarkdownCode>
     </div>
 
-    <Social />
+    <section class="mb-6 py-6">
+      <h2 class="headline-medium pb-6">Follow me on</h2>
+      <div class="container mx-auto">
+        <ListSubStats items={itemsSocialStat} />
+      </div>
+    </section>
   </div>
 </Layout>

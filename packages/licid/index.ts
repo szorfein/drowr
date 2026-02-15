@@ -16,7 +16,10 @@ import ShareIt from "./src/blocks/ShareIt.astro";
 import Social from "./src/components/Social.astro";
 import ButtonFilled from "./src/components/button/Filled.astro";
 import ButtonStyledGithub from "./src/components/button/StyledGithub.astro";
+import ButtonStyledMastodon from "./src/components/button/StyledMastodon.astro";
+import ButtonStyledRuby from "./src/components/button/StyledRuby.astro";
 import TextFieldFilled from "./src/components/text-field/Filled.astro";
+import ListSubStats from "./src/components/list/SubStats.astro";
 
 // Don't use 'export default' here
 export {
@@ -35,5 +38,8 @@ export {
   Social,
   ButtonFilled,
   ButtonStyledGithub,
+  ButtonStyledMastodon,
+  ButtonStyledRuby,
   TextFieldFilled,
+  ListSubStats,
 };

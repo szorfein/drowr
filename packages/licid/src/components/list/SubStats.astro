@@ -1,0 +1,60 @@
+---
+interface Props {
+  icon?: string;
+  platform?: string;
+  link?: string;
+  api?: string;
+  text?: string;
+  count?: number;
+}
+
+const { items } = Astro.props;
+
+async function fetchCount(item) {
+  if (!item.api) return;
+
+  try {
+    const response = await fetch(`https://api.swo.moe/stats/${item.api}`);
+    const data = await response.json();
+    if (data.failed) {
+      throw new Error(data.message);
+    } else {
+      item.count = data.count;
+    }
+  } catch (error) {
+    console.error(`Error in Substats fetching: ${error}`);
+  }
+}
+
+await Promise.all(items.map(fetchCount));
+---
+
+<div class="grid grid-cols-1 gap-3">
+  {
+    items.map((item) => (
+      <a
+        href={item.link}
+        aria-label={`See ${item.platform} profile`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="bg-surface dark:bg-dark-surface flex w-120 items-center rounded-2xl">
+          <div class="hover:bg-onSurface/8 dark:hover:bg-dark-onSurface/8 flex rounded-2xl px-8 py-4">
+            <div class="mr-4">{<item.icon />}</div>
+            <div class="w-105.5">
+              <h4 class="body-large text-onSurface dark:text-dark-onSurface">
+                {item.platform}
+              </h4>
+              <p class="body-medium text-onSurfaceVariant dark:text-dark-onSurfaceVariant">
+                {item?.link}
+              </p>
+            </div>
+            <div class="text-onSurfaceVariant dark:text-dark-onSurfaceVariant label-small ml-4 inline content-center">
+              {item.count}
+            </div>
+          </div>
+        </div>
+      </a>
+    ))
+  }
+</div>
