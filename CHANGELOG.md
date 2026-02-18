@@ -1,6 +1,8 @@
 # Changelog
 
-## 0.33.0 - Feb. 2026
+## 0.35.0 - Feb. 2026
+
+Enhance the installation of Tailwindcss with Turborepo.
 
 ### Enhancements for large layout
 
@@ -9,6 +11,7 @@
 
 ### Fixes
 
+- Conditional display Recent post if exist
 - Clean unused CSS
 - Fix the TagNavigation, make tag unique with Slug/Name.
 - Add the missing route `/pages/style/giscus` to load the css theme, Giscus look having problem with Tailwind [#41](https://github.com/giscus/giscus/issues/41), [#336](https://github.com/giscus/giscus/issues/336).
