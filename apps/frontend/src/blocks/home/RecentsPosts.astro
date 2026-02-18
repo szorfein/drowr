@@ -2,7 +2,7 @@
 import { CardOutlined } from "@drowr/licid";
 import { getAllPosts } from "@/lib/client";
 
-const data = await getAllPosts(5);
+const data = await getAllPosts(6);
 const allPosts = data.publication.posts.edges;
 
 function filterPost(item) {
@@ -43,13 +43,17 @@ const allPostsFiltered = allPosts.filter(filterPost);
       tags={allPostsFiltered[1].node.tags}
       slug={allPostsFiltered[1].node.slug}
     />
-    <CardOutlined
-      brief={allPostsFiltered[2].node.subtitle}
-      title={allPostsFiltered[2].node.title}
-      publishedAt={allPostsFiltered[2].node.publishedAt}
-      tags={allPostsFiltered[2].node.tags}
-      slug={allPostsFiltered[2].node.slug}
-      classes="hidden lg:block"
-    />
+    {
+      allPostsFiltered[2] && (
+        <CardOutlined
+          brief={allPostsFiltered[2].node.subtitle}
+          title={allPostsFiltered[2].node.title}
+          publishedAt={allPostsFiltered[2].node.publishedAt}
+          tags={allPostsFiltered[2].node.tags}
+          slug={allPostsFiltered[2].node.slug}
+          classes="hidden lg:block"
+        />
+      )
+    }
   </div>
 </section>
