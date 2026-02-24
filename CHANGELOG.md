@@ -2,7 +2,7 @@
 
 ## 0.35.0 - Feb. 2026
 
-Enhance the installation of Tailwindcss with Turborepo.
+- Enhance the installation of Tailwindcss with Turborepo.
 
 ### Enhancements for large layout
 
