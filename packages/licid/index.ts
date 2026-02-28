@@ -17,6 +17,7 @@ import Social from "./src/components/Social.astro";
 import ButtonFilled from "./src/components/button/Filled.astro";
 import ButtonStyledGithub from "./src/components/button/StyledGithub.astro";
 import TextFieldFilled from "./src/components/text-field/Filled.astro";
+import DialogIcon from "./src/components/dialog/Icon.astro";
 
 // Don't use 'export default' here
 export {
@@ -36,4 +37,5 @@ export {
   ButtonFilled,
   ButtonStyledGithub,
   TextFieldFilled,
+  DialogIcon,
 };
