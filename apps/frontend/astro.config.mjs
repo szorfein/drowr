@@ -1,6 +1,7 @@
 // @ts-check
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
+import pagefind from "astro-pagefind";
 import config from "./src/config/config.json";
 
 import vercel from "@astrojs/vercel";
@@ -16,6 +17,5 @@ export default defineConfig({
   },
 
   adapter: vercel(),
-  integrations: [sitemap()],
+  integrations: [sitemap(), pagefind()],
 });
-

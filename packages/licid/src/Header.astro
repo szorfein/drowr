@@ -41,14 +41,8 @@ const NavRoutes = [
 
     {/* right buttons */}
     <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
-      <ButtonIcon classes="mr-2" label="Search posts">
-        <IconSearch
-          width={24}
-          height={24}
-          class="fill-onSurfaceVariant dark:fill-dark-onSurfaceVariant"
-          fill="none"
-        />
-      </ButtonIcon>
+      <!-- Search component from app/frontend -->
+      <slot />
 
       <!-- ThemeSwitcher -->
       <ThemeSwitcher />

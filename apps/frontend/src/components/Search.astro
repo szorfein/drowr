@@ -1,0 +1,48 @@
+---
+import { DialogIcon } from '@drowr/licid'
+import Search from "astro-pagefind/components/Search";
+import IconClose from "@/assets/icons/close.svg"
+import IconSearch from "@/assets/icons/search.svg"
+---
+
+<DialogIcon IconOpen={IconSearch} IconClose={IconClose} title="Search">
+    <Search
+            id="search"
+            className="pagefind-ui"
+            uiOptions={{ showImages: false }}
+            />
+</DialogIcon>
+
+<style is:global>
+  @import "tailwindcss";
+  .pagefind-ui {
+      @apply opacity-100;
+
+    --pagefind-ui-primary: var(--color-error);
+    --pagefind-ui-background: var(--color-surfaceContainerLow);
+    --pagefind-ui-text: var(--color-onSurface));
+  }
+
+  .pagefind-ui__search-input {
+      @apply text-(--color-onSurface) dark:text-(--color-dark-onSurface);
+  }
+
+  .pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+      @apply overflow-y-auto bg-(--color-surface) rounded max-h-[calc(100vh-351px)] mt-0;
+    padding: 0 2em 1em;
+    box-shadow:
+      0 10px 10px -5px rgba(0, 0, 0, 0.2),
+      0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: var(--pagefind-ui-border-radius);
+    border-bottom-left-radius: var(--pagefind-ui-border-radius);
+    background-color: var(--pagefind-ui-background);
+  }
+
+  .pagefind-ui .pagefind-ui__result-link {
+    @apply text-(--color-primary);
+  }
+
+  .pagefind-ui .pagefind-ui__result-excerpt {
+      @apply text-(--color-onSurface);
+  }
+</style>
