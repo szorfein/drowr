@@ -14,16 +14,17 @@
     "@astropub/md": "^1.0.0",
     "@drowr/licid": "*",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.9",
+    "astro": "^5.18.0",
     "astro-font": "^1.1.0",
     "graphql-request": "^7.4.0",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@drowr/eslint-config": "*",
-    "@drowr/typescript-config": "*",
     "@drowr/tailwind-config": "*",
+    "@drowr/typescript-config": "*",
     "astro-eslint-parser": "^1.2.2",
+    "astro-pagefind": "^1.8.5",
     "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2"

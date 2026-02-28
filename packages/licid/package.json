@@ -27,7 +27,7 @@
     "@drowr/eslint-config": "*",
     "@drowr/tailwind-config": "*",
     "@tailwindcss/cli": "^4.1.5",
-    "astro": "^5.16.9",
+    "astro": "^5.18.0",
     "astro-eslint-parser": "^1.2.2",
     "prettier": "^3.8.0",
     "prettier-plugin-astro": "^0.14.1",

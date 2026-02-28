@@ -6,6 +6,7 @@ import { AstroFont } from "astro-font";
 import { ClientRouter } from "astro:transitions";
 import { Header, Footer } from "@drowr/licid";
 import config from "@/config/config.json";
+import SearchPageFind from "@/components/Search.astro"
 
 interface Props {
   title?: string;
@@ -125,7 +126,9 @@ console.log(Astro.site.toString());
     <meta name="fediverse:creator" content="@szorfein@mastodon.social" />
   </head>
   <body>
-    <Header />
+      <Header>
+    <SearchPageFind />
+      </Header>
     <main>
       <slot />
     </main>

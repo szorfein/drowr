@@ -13,6 +13,7 @@
   --color-primary: #006877;
   --color-onPrimary: #ffffff;
   --color-inverseSurface: #2b3133;
+  --color-secondary: #4a6268;
   --color-error: #ba1a1a;
   --color-tertiaryContainer: #dbe1ff;
   --color-onTertiaryContainer: #3c4665;
@@ -28,6 +29,7 @@
   --color-dark-primary: #83d2e3;
   --color-dark-onPrimary: #00363e;
   --color-dark-inverseSurface: #dee3e5;
+  --color-dark-secondary: #b1cbd1;
   --color-dark-error: #ffb4ab;
   --color-dark-surface: #0e1416;
   --color-dark-tertiaryContainer: #3c4665;

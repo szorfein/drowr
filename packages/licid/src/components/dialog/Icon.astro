@@ -1,0 +1,70 @@
+---
+import ButtonIcon from "../button/IconStandard.astro";
+
+const { IconOpen, IconClose, title } = Astro.props;
+---
+
+<ButtonIcon
+  classes="button-dialog text-onSurface dark:text-dark-onSurface mr-2"
+  label="Search posts"
+>
+  <IconOpen
+    class="fill-onSurfaceVariant dark:fill-dark-onSurfaceVariant"
+    fill="none"
+  />
+</ButtonIcon>
+
+<div
+  class="modal opacity-0; invisible fixed top-0 left-0 z-50 flex h-full w-full items-start justify-center"
+>
+  <!-- overlay -->
+  <div class="fixed top-0 left-0 h-full w-full bg-black/30">
+    <!-- wrapper -->
+    <div
+      class="modal-wrapper bg-surfaceContainerLow dark:bg-dark-surfaceContainerLow relative z-10 mx-auto mt-20 w-165 max-w-[96%] rounded-xl p-6 shadow-lg"
+    >
+      <!-- header -->
+      <div class="mx-auto mb-4">
+        <ButtonIcon
+          classes="button-dialog text-onSurface dark:text-dark-onSurface mx-auto flex w-30 justify-center"
+          label="Close dialog"
+        >
+          <IconClose
+            width={24}
+            height={24}
+            class="fill-secondary dark:fill-dark-secondary"
+            fill="none"
+          />
+        </ButtonIcon>
+        <h2
+          class="headline-medium text-onSurface dark:text-dark-onSurface text-center"
+        >
+          {title}
+        </h2>
+      </div>
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  @import "tailwindcss";
+  .modal.show {
+    @apply visible opacity-100;
+  }
+</style>
+
+<script async defer>
+  document.addEventListener("astro:page-load", () => {
+    const buttons = document.querySelectorAll(".button-dialog");
+    buttons.forEach((buttonItem) => {
+      buttonItem.addEventListener("click", function (event) {
+        event.preventDefault();
+        const dialogItems = document.querySelectorAll(".modal");
+        dialogItems.forEach((menuItem) => {
+          menuItem.classList.toggle("show");
+        });
+      });
+    });
+  });
+</script>
