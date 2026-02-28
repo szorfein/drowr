@@ -1,7 +1,8 @@
 # Changelog
 
-## 0.35.0 - Feb. 2026
+## 0.36.0 - Feb. 2026
 
+- Add pagefind
 - Enhance the installation of Tailwindcss with Turborepo.
 
 ### Enhancements for large layout
