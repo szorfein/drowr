@@ -1,34 +1,34 @@
 ---
-import { DialogIcon } from '@drowr/licid'
+import { DialogIcon } from "@drowr/licid";
 import Search from "astro-pagefind/components/Search";
-import IconClose from "@/assets/icons/close.svg"
-import IconSearch from "@/assets/icons/search.svg"
+import IconClose from "@/assets/icons/close.svg";
+import IconSearch from "@/assets/icons/search.svg";
 ---
 
 <DialogIcon IconOpen={IconSearch} IconClose={IconClose} title="Search">
-    <Search
-            id="search"
-            className="pagefind-ui"
-            uiOptions={{ showImages: false }}
-            />
+  <Search
+    id="search"
+    className="pagefind-ui"
+    uiOptions={{ showImages: false }}
+  />
 </DialogIcon>
 
 <style is:global>
   @import "tailwindcss";
   .pagefind-ui {
-      @apply opacity-100;
+    @apply opacity-100;
 
     --pagefind-ui-primary: var(--color-error);
     --pagefind-ui-background: var(--color-surfaceContainerLow);
-    --pagefind-ui-text: var(--color-onSurface));
+    --pagefind-ui-text: var(--color-onSurface);
   }
 
   .pagefind-ui__search-input {
-      @apply text-(--color-onSurface) dark:text-(--color-dark-onSurface);
+    @apply text-(--color-onSurface) dark:text-(--color-dark-onSurface);
   }
 
   .pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
-      @apply overflow-y-auto bg-(--color-surface) rounded max-h-[calc(100vh-351px)] mt-0;
+    @apply mt-0 max-h-[calc(100vh-351px)] overflow-y-auto rounded bg-(--color-surface);
     padding: 0 2em 1em;
     box-shadow:
       0 10px 10px -5px rgba(0, 0, 0, 0.2),
@@ -43,6 +43,6 @@ import IconSearch from "@/assets/icons/search.svg"
   }
 
   .pagefind-ui .pagefind-ui__result-excerpt {
-      @apply text-(--color-onSurface);
+    @apply text-(--color-onSurface);
   }
 </style>
