@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.37.0 - Mar. 2026
+
+- Better display for post/slug
+
 ## 0.36.0 - Feb. 2026
 
 - Add pagefind
