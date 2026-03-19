@@ -6,20 +6,81 @@ const sitePrefix = import.meta.env.PROD
   : "http://localhost:4321";
 ---
 
-<script
-  is:inline
-  src="https://giscus.app/client.js"
-  data-repo="szorfein/drowr"
-  data-repo-id="R_kgDOQ5Eqfg"
-  data-category="Announcements"
-  data-category-id="DIC_kwDOQ5Eqfs4C2BZL"
-  data-mapping="pathname"
-  data-strict="0"
-  data-reactions-enabled="1"
-  data-emit-metadata="0"
-  data-input-position="bottom"
-  data-lang="en"
-  data-loading="lazy"
-  crossorigin="anonymous"
-  data-theme={`${sitePrefix}/styles/giscus`}
-  async></script>
+<div class="giscus"></div>
+
+<script>
+  function loadGiscus() {
+    //const theme = `${sitePrefix}/styles/giscus`;
+
+    const theme = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
+
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "szorfein/drowr");
+    script.setAttribute("data-repo-id", "R_kgDOQ5Eqfg");
+    script.setAttribute("data-category", "Announcements");
+    script.setAttribute("data-category-id", "DIC_kwDOQ5Eqfs4C2BZL");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-lang", "en");
+    script.setAttribute("data-loading", "lazy");
+    script.setAttribute("crossorigin", "anonymous");
+    script.setAttribute("data-theme", theme);
+    script.async = true;
+
+    const container = document.querySelector(".giscus");
+    if (container) {
+      container.innerHTML = ""; // Clear container to avoid duplicate loading
+      container.appendChild(script);
+    }
+  }
+
+  loadGiscus();
+  document.addEventListener("astro:page-load", loadGiscus);
+</script>
+
+<script is:inline>
+  function updateGiscusTheme() {
+    // Check if 'dark' is in the current classes
+    const theme = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
+
+    // Get the Giscus widget iframe
+    const iframe = document.querySelector("iframe.giscus-frame");
+    if (!iframe) return;
+
+    // Set the Giscus theme widget based on the current site's theme
+    iframe.contentWindow.postMessage(
+      { giscus: { setConfig: { theme } } },
+      "https://giscus.app",
+    );
+  }
+
+  // Check constantly for a change in the current classes
+  const observer = new MutationObserver(updateGiscusTheme);
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
+
+  window.onload = () => {
+    updateGiscusTheme();
+  };
+  document.addEventListener("DOMContentLoaded", () => {
+    updateGiscusTheme();
+  });
+  // Trigger the script on page load
+  document.addEventListener("astro:page-loaded", () => {
+    updateGiscusTheme();
+  });
+
+  document.addEventListener("astro:after-swap", () => {
+    updateGiscusTheme();
+  });
+</script>
