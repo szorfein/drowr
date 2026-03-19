@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.37.1. Mar. 2026
+
+Fixes
+
+- Giscus switch on dark/light mode
+
 ## 0.37.0 - Mar. 2026
 
 - Better display for post/slug
